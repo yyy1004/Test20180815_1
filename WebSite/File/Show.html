@@ -1,0 +1,210 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>管理员专家管理文档界面</title>
+    <meta http-equiv="pragma" content="no-cache" />
+    <script src="/Scripts/loading.js" type="text/javascript"></script>
+    <link href="/EasyUI/themes/icon.css" rel="stylesheet" type="text/css" />
+    <link href="/EasyUI/themes/gray/easyui.css" rel="stylesheet" type="text/css" />
+    <script src="/EasyUI/jquery.min.js" type="text/javascript"></script>
+    <script src="/EasyUI/jquery.easyui.min.js" type="text/javascript"></script>
+    <script src="/Scripts/distinguishBrowser.js" type="text/javascript"></script>
+    <script src="../EasyUI/locale/easyui-lang-zh_CN.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        function doSearch() {
+            //查找文件
+            $.ajax({
+                url: '/File/FileHandler.ashx?action=GetFile',
+                type: 'POST',
+                data: {
+                    Name: $("#ss").val()
+                },
+                beforeSend: function () {
+                    $.messager.progress({
+                        text: '正在处理中...'
+                    });
+                },
+                success: function (data) {
+                    $.messager.progress('close');
+                    data = eval('(' + data + ')');      //将一个json字符串解析成js对象
+                    $("#dg").datagrid('loadData', data);
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <table id="dg" class="easyui-datagrid" title="文件列表" url="/File/FileHandler.ashx?action=GetAll"
+        pagination="true" toolbar="#toolbar" rownumbers="false" fitcolumns="true" singleselect="false">
+        <thead>
+            <tr>
+                <th field="ck" checkbox="true">
+                </th>
+                <th field="Id" width="100" data-options="align:'center'">
+                    文档编号
+                </th>
+                <th field="Name" width="150" data-options="align:'center'">
+                    文档名
+                </th>
+                <th field="JZId" width="120" data-options="align:'center',type:'combobox',valueField: 'text', textField: 'id', url: '/JZ/JZHandler.ashx?action=GetAllJZId', required: true">
+                    机组编号
+                </th>
+                <th field="UploadTime" width="120" data-options="align:'center'">
+                    上传时间
+                </th>
+                <th field="Note" width="120" data-options="align:'center',formatter:myformatter">
+                    操作
+                </th>
+            </tr>
+        </thead>
+    </table>
+    <div id="toolbar" border="true" style="border: 1px solid #ddd; height: 32px; padding: 2px 5px;
+        background: #fafafa;">
+        <div style="float: left;">
+            <a href="#" class="easyui-linkbutton" plain="true" onclick="addFile()" icon="icon-add">
+                新增</a>
+        </div>
+        <div class="datagrid-btn-separator">
+        </div>
+        <div style="float: left;">
+            <a href="#" class="easyui-linkbutton" plain="true" onclick="deleteFile()" icon="icon-remove">
+                删除</a>
+        </div>
+        <div id="tb" style="float: right;">
+            <input id="ss" class="easyui-searchbox" searcher="doSearch" prompt="请输入文件名" style="width: 160px;
+                vertical-align: middle;"></input>
+        </div>
+    </div>
+    <!--对话框-->
+    <div id="dlg" class="easyui-dialog" style="width: 400px; padding: 10px 20px" closed="true"
+        buttons="#dlg-buttons">
+        <form id="fm" method="post" enctype="multipart/form-data">
+        <div style="margin-bottom: 20px">
+            <input id="cc2" class="easyui-combobox" name="JZId" label="机组编号" style="width: 100%"
+                data-options="editable: false, valueField: 'id', textField: 'text', url: '/JZ/JZHandler.ashx?action=GetAllJZId',required:true" />
+        </div>
+        <div style="margin-bottom: 20px">
+            <input id="File" class="easyui-filebox" name="File" style="width: 100%" data-options="label:'文档名:',required:true,buttonText:'选择文件',prompt:'不限制文件格式'" />
+        </div>
+        <div style="margin-bottom: 20px">
+            <input id="cc1" class="easyui-textbox" name="Type" label="类型" style="width: 100%"
+                data-options="valueField:'id',textField:'text',required:false">
+        </div>
+        </form>
+    </div>
+    <div id="dlg-buttons">
+        <a href="#" class="easyui-linkbutton" iconcls="icon-ok" onclick="saveFile()">保存</a>
+        <a href="#" class="easyui-linkbutton" iconcls="icon-cancel" onclick="javascript:$('#dlg').dialog('close')">
+            取消</a>
+    </div>
+    <script type="text/javascript">
+        function myformatter(value) {
+            return "<a href='" + value + "' >下载</a>";
+        }
+        function addFile() {
+            $('#dlg').dialog('open').dialog('setTitle', '添加文档信息');
+            $('#fm').form('clear');
+        }
+        function deleteFile() {
+            //删除时先获取选择行
+            var rows = $("#dg").datagrid("getSelections");
+            //选择要删除的行
+            if (rows.length > 0) {
+                $.messager.confirm("提示", "你确定要删除吗?", function (r) {
+                    if (r) {
+                        //获取所有要删除的文档的编号
+                        var ids = [];
+                        var rowindex = [];
+                        for (var i = 0; i < rows.length; i++) {
+                            ids.push(rows[i].Id);
+                            var index = $("#dg").datagrid('getRowIndex', rows[i]);
+                            //保存列的信息
+                            rowindex.push(index);
+                        }
+                        //按照从小到大排序
+                        rowindex.sort();
+                        //执行数据删除操作
+                        $.ajax({
+                            url: '/File/FileHandler.ashx?action=Delete',
+                            type: 'POST',
+                            async: false,
+                            data: {
+                                Id: ids.join(',')
+                            },
+                            beforeSend: function () {
+                                $.messager.progress({
+                                    text: '正在处理中...'
+                                });
+                            },
+                            success: function (data) {
+                                $.messager.progress('close');
+                                data = eval('(' + data + ')');      //将一个json字符串解析成js对象
+                                if (data.Success) {
+                                    //手动删除表格数据
+                                    for (var i = rowindex.length - 1; i >= 0; i--) {
+                                        $("#dg").datagrid('deleteRow', rowindex[i]);
+                                    }
+                                    $.messager.show({
+                                        title: '操作提醒',
+                                        msg: data.Message
+                                    });
+                                } else {
+                                    $.messager.show('删除失败', data.Message, 'warning');
+                                }
+                            }
+                        });
+                    }
+                });
+            } else {
+                $.messager.alert("操作提示", "请选中需要删除的文档所在的行！", 'info');
+            }
+        }
+        function saveFile() {
+            url1 = '/File/FileHandler.ashx?action=Add';
+            if (getBrowserType() == "Chrome") {
+                $.ajax({
+                    url: url1,
+                    async: false,
+                    type: "POST",
+                    cache: false, //上传文件不需要缓存
+                    processData: false, // 告诉jQuery不要去处理发送的数据
+                    contentType: false, // 告诉jQuery不要去设置Content-Type请求头
+                    data: new FormData($('#fm')[0]), 
+                    beforeSend: function () {
+                        return $('#fm').form('validate');
+                    },
+                    success: function (data) {
+                        data = eval('(' + data + ')');      //将一个json字符串解析成js对象
+                        $.messager.alert("操作提示", data.Message, 'info'); //显示后台信息
+                        if (data.Success) {
+                            $('#dlg').dialog('close'); 	    //关闭弹出框
+                            $("#dg").datagrid('reload');
+                        }
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        alert(XMLHttpRequest.status);
+                        alert(XMLHttpRequest.readyState);
+                        alert(textStatus);
+                    }
+                });
+            } else {
+                $('#fm').form('submit', {
+                    url: url1, //注意添加和修改的url不同
+                    onSubmit: function () {
+                        //验证表单是否合法
+                        return $(this).form('validate');
+                    },
+                    success: function (res) {
+                        data = eval('(' + res + ')');      //将一个json字符串解析成js对象
+                        $.messager.alert("操作提示", data.Message, 'info'); //提示后台错误信息
+                        if (data.Success) {
+                            $('#dlg').dialog('close'); 	    //关闭弹出框
+                            $('#dd').datagrid('reload');    //重新加载数据
+                        }
+                    }
+                });
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+td { font-size: 9pt}
+
+A 
+{
+	COLOR: #000000; TEXT-DECORATION: none 
+}
+A:hover 
+{
+	COLOR: #E78a29; TEXT-DECORATION: underline 
+}
+	
+.textbox
+{
+	border-right: #ffffff;
+	border-top: #ffffff;
+	font-size: 9pt;
+	border-left:#ffffff;
+	border-bottom: #ffffff;
+	border-style:none;
+}
+
+.dg_header
+{
+	border-color:#4F7FC9;
+	border-width:1px;
+	height: 25px;
+	background-color: #E3EFFF;
+	
+} 
+.dg_header td {
+	border:			1px solid;
+	border-color:	#4F7FC9;
+	cursor:			default;
+}
+
+.dg_alter
+ {  
+	background-color:#F5F9FF; 
+	border-width:1px; 
+	border-color :#4F7FC9; 
+	border-style :solid; 
+} 
+.dg_alter td {
+	border:			1px solid;
+	border-color:	#4F7FC9;
+	cursor:			default;
+} 
+.dg_item 
+{ 
+	background-color:#F5F9FF; 
+	border-width:1px; 
+	border-color :#4F7FC9; 
+	border-style :solid; 
+}
+.dg_item td {
+	border:			1px solid;
+	border-color:	#4F7FC9;
+	cursor:			default;
+} 
+.dg_page 
+{ 
+	border-width: 1px; 
+	border-color :#4F7FC9; 
+}

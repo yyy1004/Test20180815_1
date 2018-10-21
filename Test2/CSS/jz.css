@@ -1,0 +1,470 @@
+﻿* {
+    padding: 0;
+    margin: 0;
+    font-family: Arial;
+}
+
+/*清除浮动*/
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.aspNetHidden {
+    width: 500px;
+}
+
+/*清除浮动*/
+.clearfix {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/*整个盒子*/
+.jz-wrap {
+    width: 100%;
+    height: 100%;
+    /*border:4px solid red;*/
+}
+    /*内容*/
+    .jz-wrap .jz-con {
+        width: 100%;
+        height: 100%;
+        /*margin: 0 auto;*/
+        /*border:9px solid green;*/
+        /*overflow:hidden;*/
+        position: relative;
+    }
+
+#tabs {
+    width: 100%;
+    height: 100%;
+    /*border:12px solid brown;*/
+}
+
+
+/*数据与图片框*/
+.jzjc {
+    /*border:4px solid black;*/
+    /*display: table-cell;
+         vertical-align: middle;*/
+}
+
+#jzjc-data1 {
+    margin: auto;
+}
+
+/*方块包围*/
+.status-all {
+    width: 120px;
+    height: 60px;
+    border: 1px solid #0070b8;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.top {
+    width: 800px;
+    height: 65px;
+    position: absolute;
+    /*border: 1px solid red;*/
+    top: 0px;
+    left: 80px;
+}
+
+.tops {
+    /*margin-right: 40px;*/
+    /*float: left;*/
+    position: absolute;
+    top: 0px;
+}
+
+
+
+.bottom {
+    width: 800px;
+    height: 65px;
+    /*border:1px solid red;*/
+    position: absolute;
+    bottom: 0px;
+    left: 80px;
+}
+
+.bottoms {
+    position: absolute;
+    top: 0px;
+}
+
+
+.left {
+    left: -110px;
+    width: 122px;
+    height: 280px;
+    position: absolute;
+    top: 95px;
+}
+
+.lefts {
+    /*margin-right: 40px;*/
+    /*float: left;*/
+    position: absolute;
+    left: 0px;
+}
+
+
+.right {
+    right: -110px;
+    width: 122px;
+    height: 280px;
+    position: absolute;
+    top: 95px;
+}
+
+.rights {
+    /*margin-right: 40px;*/
+    /*float: left;*/
+    position: absolute;
+    left: 0px; 
+}
+
+
+/*-------------------------top--------------------*/
+.jz-wrap .jz-con .text-wrap1 .top .statusisrun {
+    left: -65px;
+}
+
+.jz-wrap .jz-con .text-wrap1 .top .status1 {
+    left: 65px;
+}
+
+.jz-wrap .jz-con .text-wrap1 .top .status2 {
+    left: 195px;
+}
+
+.jz-wrap .jz-con .text-wrap1 .top .status3 {
+    left: 325px;
+}
+
+.jz-wrap .jz-con .text-wrap1 .top .status4 {
+    left: 455px;
+}
+
+.jz-wrap .jz-con .text-wrap1 .top .statusT1 {
+    left: 585px;
+}
+/*--------------bottom-------------*/
+.jz-wrap .jz-con .text-wrap1 .bottom .recordingtime {
+    left: -65px;
+}
+
+.jz-wrap .jz-con .text-wrap1 .bottom .status5 {
+    left: 65px;
+}
+
+.jz-wrap .jz-con .text-wrap1 .bottom .status6 {
+    left: 195px;
+}
+
+.jz-wrap .jz-con .text-wrap1 .bottom .status7 {
+    left: 325px;
+}
+
+.jz-wrap .jz-con .text-wrap1 .bottom .status8 {
+    left: 455px;
+}
+
+.jz-wrap .jz-con .text-wrap1 .bottom .statusT2 {
+    left: 585px;
+}
+
+/*--------------left-------------*/
+.jz-wrap .jz-con .text-wrap1 .left .status11 {
+    top: 0px;
+}
+
+.jz-wrap .jz-con .text-wrap1 .left .status12 {
+    top: 70px;
+}
+
+.jz-wrap .jz-con .text-wrap1 .left .status13 {
+    top: 140px;
+}
+
+.jz-wrap .jz-con .text-wrap1 .left .status14 {
+    top: 210px;
+}
+
+/*--------------right-------------*/
+.jz-wrap .jz-con .text-wrap1 .right .status9 {
+    top: 0px;
+}
+
+.jz-wrap .jz-con .text-wrap1 .right .status10 {
+    top: 70px;
+}
+
+
+.jz-wrap .right-wrap {
+    width: 100%;
+    height: 900px;
+    float: left;
+}
+
+
+.status-all .wrap-name {
+    width: 120px;
+    height: 30px;
+    /*background-color: #6666FF;*/
+    background-color: #0070b8;
+}
+
+    .status-all .wrap-name .name {
+        color: #fff;
+        font-size: 14px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+    }
+/*第二行*/
+.status-all .wrap-value {
+    width: 120px;
+    height: 30px;
+    background-color: #bbb;
+    /*float:left;*/
+    /*border:1px solid red;*/
+}
+    /*数字方块*/
+    .status-all .wrap-value .number-father {
+        width: 30px;
+        height: 30px;
+        /*border: 1px solid black;*/
+        float: left;
+        text-align: center;
+        /*border-right:1px solid blue;*/
+        position: relative;
+        /*vertical-align:middle;*/
+    }
+        /*竖线*/
+        .status-all .wrap-value .number-father .number {
+            width: 26px;
+            height: 20px;
+            /*border-radius: 50%;*/
+            /*background-color:#fff;*/
+            border-right: 1px solid #0070b8;
+            /*margin:2px auto;*/
+            margin: auto;
+            /*text-align: center;*/
+            /*display:table-cell;*/
+            /*vertical-align: middle;*/
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: inline-block;
+            line-height: 20px;
+        }
+
+            .status-all .wrap-value .number-father .number span {
+                color: #cf2319;
+                font-size: 14px;
+                /*height: 20px;
+                line-height: 20px;
+                width: 20px;
+                display: inline-block;*/
+                /*text-align: center;*/
+                /*border:1px solid black;*/
+                /*margin: 0 auto;*/
+            }
+    /*竖线*/
+    .status-all .wrap-value .pipe-wrap {
+        float: left; /*浮动的元素脱离文档流，自然就不能居中了*/
+        width: 20px;
+        height: 30px;
+        /*background-color: red;*/
+        text-align: center;
+        font-size: 14px;
+    }
+
+        .status-all .wrap-value .pipe-wrap .pipe {
+            width: 20px;
+            height: 30px;
+            display: table-cell;
+            vertical-align: middle;
+        }
+    /*值*/
+    .status-all .wrap-value .value-father {
+        width: 85px;
+        height: 30px;
+        /*border: 2px solid green;*/
+        float: left;
+        text-align: center;
+        position: relative;
+    }
+
+        .status-all .wrap-value .value-father .value-con {
+            width: 52px;
+            height: 20px;
+            /*border:4px solid red;*/
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0px;
+            right: 0;
+            margin: auto;
+        }
+
+            .status-all .wrap-value .value-father .value-con span {
+                color: #fff;
+                font-size: 18px;
+                font-weight: 700;
+                /*width: 80px;*/
+                /*text-align: center;*/
+                /*height: 20px;*/
+                /*line-height: 20px;*/
+                /*display: inline-block;*/
+                /*border:1px solid red;*/
+            }
+
+.jz-wrap .jz-con .order-wrap {
+    width: 100%;
+    height: 100%;
+    /*border:12px solid red;*/
+}
+
+    .jz-wrap .jz-con .order-wrap .outside {
+        width: 18px;
+        height: 18px;
+        position: absolute;
+        /*background-color:red;*/
+        border-radius: 50%;
+        border: 1px solid #db251a;
+        text-align: center;
+        color: #db251a;
+        top: 20px;
+        left: 20px;
+    }
+
+        .jz-wrap .jz-con .order-wrap .outside span {
+            /*background-color:brown;*/
+            font-size: 18px;
+            /*height:20px;*/
+            line-height: 19px;
+            margin: auto;
+        }
+
+    .jz-wrap .jz-con .order-wrap .order1 {
+        left: 449px;
+        top: 137px;
+    }
+
+    .jz-wrap .jz-con .order-wrap .order2 {
+        left: 407px;
+        top: 124px;
+    }
+
+    .jz-wrap .jz-con .order-wrap .order3 {
+        left: 369px;
+        top: 124px;
+    }
+
+    .jz-wrap .jz-con .order-wrap .order4 {
+        left: 335px;
+        top: 129px;
+    }
+
+    .jz-wrap .jz-con .order-wrap .order5 {
+        left: 456px;
+        top: 265px;
+    }
+
+    .jz-wrap .jz-con .order-wrap .order6 {
+        left: 414px;
+        top: 285px;
+    }
+
+    .jz-wrap .jz-con .order-wrap .order7 {
+        left: 372px;
+        top: 290px;
+    }
+
+    .jz-wrap .jz-con .order-wrap .order8 {
+        left: 328px;
+        top: 271px; 
+    }
+
+    .jz-wrap .jz-con .order-wrap .orderI1 {
+        left: 512px;
+        top: 150px;
+    }
+
+    .jz-wrap .jz-con .order-wrap .orderI2 {
+        left: 521px;
+        top: 264px; 
+    }
+
+    .jz-wrap .jz-con .order-wrap .order11 {
+        left: 133px;
+        top: 127px;
+    }
+
+    .jz-wrap .jz-con .order-wrap .order12 {
+        left: 283px;
+        top: 131px; 
+    }
+
+    .jz-wrap .jz-con .order-wrap .order13 {
+        left: 94px;
+        top: 237px;
+    }
+
+    .jz-wrap .jz-con .order-wrap .order14 {
+        left: 266px;
+        top: 246px;
+    }
+
+    .jz-wrap .jz-con .order-wrap .orderT1 {
+        left: 683px;
+        top: 116px;
+    }
+
+    .jz-wrap .jz-con .order-wrap .orderT2 {
+        left: 719px;
+        top: 268px;
+    }
+
+
+#value-fatherrecordingtime {
+    width: 120px;
+}
+
+    #value-fatherrecordingtime > div {
+        width: 100px;
+        height: 100%;
+        margin-top: 1px;
+        /*border:1px solid red;*/
+    }
+/*时间字体大小*/
+#recordingdingtime-value {
+    font-size: 12px;
+    color: green;
+    font-weight: 500;
+}
+
+#round-marking {
+    display: block;
+    width: 18px;
+    height: 18px;
+    background-color: white;
+    border-radius: 50%;
+    margin-left: 2px;
+    margin-top: 1px;
+}
+
+#ssisrun-value {
+    line-height: 20px;
+    font-weight: 500;
+    font-size: 17px;
+}

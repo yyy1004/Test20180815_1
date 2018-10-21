@@ -1,0 +1,835 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="jz.aspx.cs" Inherits="Web.JZ.jz1" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+     <body style="height: 200pt; margin: 0">
+       <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+      
+         
+         </div>
+       <div id="Div1" style="height:100pt;width:100pt; float:left" ></div>
+       <div id="Div2" style="height:100pt;width:100pt; float:left " ></div>
+      <div id="Div3" style="height:100pt;width:100pt; float:left" ></div>
+       <div id="Div4" style="height:100pt;width:100pt; float:left " ></div>
+       <div id="Div5" style="height:100pt;width:100pt; float:left" ></div>
+       <div id="Div6" style="height:100pt;width:100pt; float:left " ></div>
+       <div id="Div7" style="height:100pt;width:100pt; float:left" ></div>
+       <div id="Div8" style="height:100pt;width:100pt; float:left " ></div>
+
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+       <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+      
+    <script type="text/javascript">
+  
+        var Dv1 = "Div1";
+        var Dname1 = '速度';
+        var Dmin = 10;
+        var Dmid1 = 20;
+        var Dmid2 = 30;
+        var Dmax = 50;
+        var Dval = 40;
+        var dom1 = document.getElementById(Dv1);
+        var myChart1 = echarts.init(dom1);
+        var app = {};
+        option1 = null;
+        option1 = {
+            
+            series: [
+        {
+            name: Dname1,
+            type: 'gauge',
+            detail: { formatter: '{value}', fontSize: 15 },
+            data: [{ value: 50, name: Dname1}],
+            min: '0',
+            max: '45',
+            splitLine: { //分割线样式（及10、20等长线样式）
+                length: 10,
+                lineStyle: { // 属性lineStyle控制线条样式
+                    width: 0.5
+                }
+            },
+            axisTick: { //刻度线样式（及短线样式）
+                length: 1
+            },
+            axisLabel : { //文字样式（及“10”、“20”等文字样式）
+                     color : "black",
+                     distance: -25 ,//文字离表盘的距离
+                      fontSize : 4
+                  },
+              pointer : { //指针样式
+                     length: '60%',
+                     width:3
+                 },
+            axisLine: {
+                show: true,
+                lineStyle: { // 属性lineStyle控制线条样式
+                    color: [ //表盘颜色
+
+                             [Dmid1 / Dmax, "#0000FF"], //51%-70%处的颜色
+                              [Dmid2 / Dmax, "#FFFF00"], //70%-90%处的颜色
+                              [1, "#FF0000"]//90%-100%处的颜色
+                          ],
+                    width: 5//表盘宽度
+                }
+            }
+        }
+
+    ]
+    };
+   
+
+        if (option1 && typeof option1 === "object") {
+            myChart1.setOption(option1, true);
+        }
+     
+       </script>       
+
+        <script type="text/javascript">
+
+            var Dv1 = "Div2";
+            var Dname1 = '速度2';
+            var Dmin = 10;
+            var Dmid1 = 20;
+            var Dmid2 = 30;
+            var Dmax = 50;
+            var Dval = 40;
+            var dom1 = document.getElementById(Dv1);
+            var myChart2 = echarts.init(dom1);
+            var app = {};
+            option2 = null;
+            option2 = {
+
+                series: [
+        {
+            name: Dname1,
+            type: 'gauge',
+            detail: { formatter: '{value}', fontSize: 15 },
+            data: [{ value: 50, name: Dname1}],
+            min: '0',
+            max: '45',
+            splitLine: { //分割线样式（及10、20等长线样式）
+                length: 10,
+                lineStyle: { // 属性lineStyle控制线条样式
+                    width: 0.5
+                }
+            },
+            axisTick: { //刻度线样式（及短线样式）
+                length: 1
+            },
+            axisLabel: { //文字样式（及“10”、“20”等文字样式）
+                color: "black",
+                distance: -25, //文字离表盘的距离
+                fontSize: 4
+            },
+            pointer: { //指针样式
+                length: '60%',
+                width: 3
+            },
+            axisLine: {
+                show: true,
+                lineStyle: { // 属性lineStyle控制线条样式
+                    color: [ //表盘颜色
+
+                             [Dmid1 / Dmax, "#0000FF"], //51%-70%处的颜色
+                              [Dmid2 / Dmax, "#FFFF00"], //70%-90%处的颜色
+                              [1, "#FF0000"]//90%-100%处的颜色
+                          ],
+                    width: 5//表盘宽度
+                }
+            }
+        }
+
+    ]
+            };
+
+          
+            if (option2 && typeof option2 === "object") {
+                myChart2.setOption(option2, true);
+            }
+           
+       
+       </script>  
+      
+       <script type="text/javascript">
+           var Dv1 = "Div3";
+           var Dname1 = '速度3';
+           var Dmin = 10;
+           var Dmid1 = 20;
+           var Dmid2 = 30;
+           var Dmax = 50;
+           var Dval = 40;
+           var dom1 = document.getElementById(Dv1);
+           var myChart3 = echarts.init(dom1);
+           var app = {};
+           option3 = null;
+           option3 = {
+
+               series: [
+        {
+            name: Dname1,
+            type: 'gauge',
+            detail: { formatter: '{value}', fontSize: 15 },
+            data: [{ value: 50, name: Dname1}],
+            min: '0',
+            max: '45',
+            splitLine: { //分割线样式（及10、20等长线样式）
+                length: 10,
+                lineStyle: { // 属性lineStyle控制线条样式
+                    width: 0.5
+                }
+            },
+            axisTick: { //刻度线样式（及短线样式）
+                length: 1
+            },
+            axisLabel: { //文字样式（及“10”、“20”等文字样式）
+                color: "black",
+                distance: -25, //文字离表盘的距离
+                fontSize: 4
+            },
+            pointer: { //指针样式
+                length: '60%',
+                width: 3
+            },
+            axisLine: {
+                show: true,
+                lineStyle: { // 属性lineStyle控制线条样式
+                    color: [ //表盘颜色
+
+                             [Dmid1 / Dmax, "#0000FF"], //51%-70%处的颜色
+                              [Dmid2 / Dmax, "#FFFF00"], //70%-90%处的颜色
+                              [1, "#FF0000"]//90%-100%处的颜色
+                          ],
+                    width: 5//表盘宽度
+                }
+            }
+        }
+
+    ]
+           };
+
+
+           if (option3 && typeof option3 === "object") {
+               myChart3.setOption(option3, true);
+           }
+     
+       </script>  
+           <script type="text/javascript">
+
+               var Dv1 = "Div4";
+               var Dname1 = '速度4';
+               var Dmin = 10;
+               var Dmid1 = 20;
+               var Dmid2 = 30;
+               var Dmax = 50;
+               var Dval = 40;
+               var dom1 = document.getElementById(Dv1);
+               var myChart4 = echarts.init(dom1);
+               var app = {};
+               option4 = null;
+               option4 = {
+
+                   series: [
+        {
+            name: Dname1,
+            type: 'gauge',
+            detail: { formatter: '{value}', fontSize: 15 },
+            data: [{ value: 50, name: Dname1}],
+            min: '0',
+            max: '45',
+            splitLine: { //分割线样式（及10、20等长线样式）
+                length: 10,
+                lineStyle: { // 属性lineStyle控制线条样式
+                    width: 0.5
+                }
+            },
+            axisTick: { //刻度线样式（及短线样式）
+                length: 1
+            },
+            axisLabel: { //文字样式（及“10”、“20”等文字样式）
+                color: "black",
+                distance: -25, //文字离表盘的距离
+                fontSize: 4
+            },
+            pointer: { //指针样式
+                length: '60%',
+                width: 3
+            },
+            axisLine: {
+                show: true,
+                lineStyle: { // 属性lineStyle控制线条样式
+                    color: [ //表盘颜色
+
+                             [Dmid1 / Dmax, "#0000FF"], //51%-70%处的颜色
+                              [Dmid2 / Dmax, "#FFFF00"], //70%-90%处的颜色
+                              [1, "#FF0000"]//90%-100%处的颜色
+                          ],
+                    width: 5//表盘宽度
+                }
+            }
+        }
+
+    ]
+               };
+
+
+               if (option4 && typeof option4 === "object") {
+                   myChart4.setOption(option4, true);
+               }
+     
+       </script> 
+           <script type="text/javascript">
+
+               var Dv1 = "Div5";
+               var Dname1 = '速度5';
+               var Dmin = 10;
+               var Dmid1 = 20;
+               var Dmid2 = 30;
+               var Dmax = 50;
+               var Dval = 40;
+               var dom1 = document.getElementById(Dv1);
+               var myChart5 = echarts.init(dom1);
+               var app = {};
+               option5 = null;
+               option5 = {
+
+                   series: [
+        {
+            name: Dname1,
+            type: 'gauge',
+            detail: { formatter: '{value}', fontSize: 15 },
+            data: [{ value: 50, name: Dname1}],
+            min: '0',
+            max: '45',
+            splitLine: { //分割线样式（及10、20等长线样式）
+                length: 10,
+                lineStyle: { // 属性lineStyle控制线条样式
+                    width: 0.5
+                }
+            },
+            axisTick: { //刻度线样式（及短线样式）
+                length: 1
+            },
+            axisLabel: { //文字样式（及“10”、“20”等文字样式）
+                color: "black",
+                distance: -25, //文字离表盘的距离
+                fontSize: 4
+            },
+            pointer: { //指针样式
+                length: '60%',
+                width: 3
+            },
+            axisLine: {
+                show: true,
+                lineStyle: { // 属性lineStyle控制线条样式
+                    color: [ //表盘颜色
+
+                             [Dmid1 / Dmax, "#0000FF"], //51%-70%处的颜色
+                              [Dmid2 / Dmax, "#FFFF00"], //70%-90%处的颜色
+                              [1, "#FF0000"]//90%-100%处的颜色
+                          ],
+                    width: 5//表盘宽度
+                }
+            }
+        }
+
+    ]
+               };
+
+
+               if (option5 && typeof option5 === "object") {
+                   myChart5.setOption(option5, true);
+               }
+     
+       </script> 
+
+        <script type="text/javascript">
+
+            var Dv1 = "Div6";
+            var Dname1 = '速度6';
+            var Dmin = 10;
+            var Dmid1 = 20;
+            var Dmid2 = 30;
+            var Dmax = 50;
+            var Dval = 40;
+            var dom1 = document.getElementById(Dv1);
+            var myChart6 = echarts.init(dom1);
+            var app = {};
+            option6 = null;
+            option6 = {
+
+                series: [
+        {
+            name: Dname1,
+            type: 'gauge',
+            detail: { formatter: '{value}', fontSize: 15 },
+            data: [{ value: 50, name: Dname1}],
+            min: '0',
+            max: '45',
+            splitLine: { //分割线样式（及10、20等长线样式）
+                length: 10,
+                lineStyle: { // 属性lineStyle控制线条样式
+                    width: 0.5
+                }
+            },
+            axisTick: { //刻度线样式（及短线样式）
+                length: 1
+            },
+            axisLabel: { //文字样式（及“10”、“20”等文字样式）
+                color: "black",
+                distance: -25, //文字离表盘的距离
+                fontSize: 4
+            },
+            pointer: { //指针样式
+                length: '60%',
+                width: 3
+            },
+            axisLine: {
+                show: true,
+                lineStyle: { // 属性lineStyle控制线条样式
+                    color: [ //表盘颜色
+
+                             [Dmid1 / Dmax, "#0000FF"], //51%-70%处的颜色
+                              [Dmid2 / Dmax, "#FFFF00"], //70%-90%处的颜色
+                              [1, "#FF0000"]//90%-100%处的颜色
+                          ],
+                    width: 5//表盘宽度
+                }
+            }
+        }
+
+    ]
+            };
+
+
+            if (option6 && typeof option6 === "object") {
+                myChart6.setOption(option6, true);
+            }
+     
+       </script> 
+          <script type="text/javascript">
+
+              var Dv1 = "Div6";
+              var Dname1 = '速度6';
+              var Dmin = 10;
+              var Dmid1 = 20;
+              var Dmid2 = 30;
+              var Dmax = 50;
+              var Dval = 40;
+              var dom1 = document.getElementById(Dv1);
+              var myChart6 = echarts.init(dom1);
+              var app = {};
+              option6 = null;
+              option6 = {
+
+                  series: [
+        {
+            name: Dname1,
+            type: 'gauge',
+            detail: { formatter: '{value}', fontSize: 15 },
+            data: [{ value: 50, name: Dname1}],
+            min: '0',
+            max: '45',
+            splitLine: { //分割线样式（及10、20等长线样式）
+                length: 10,
+                lineStyle: { // 属性lineStyle控制线条样式
+                    width: 0.5
+                }
+            },
+            axisTick: { //刻度线样式（及短线样式）
+                length: 1
+            },
+            axisLabel: { //文字样式（及“10”、“20”等文字样式）
+                color: "black",
+                distance: -25, //文字离表盘的距离
+                fontSize: 4
+            },
+            pointer: { //指针样式
+                length: '60%',
+                width: 3
+            },
+            axisLine: {
+                show: true,
+                lineStyle: { // 属性lineStyle控制线条样式
+                    color: [ //表盘颜色
+
+                             [Dmid1 / Dmax, "#0000FF"], //51%-70%处的颜色
+                              [Dmid2 / Dmax, "#FFFF00"], //70%-90%处的颜色
+                              [1, "#FF0000"]//90%-100%处的颜色
+                          ],
+                    width: 5//表盘宽度
+                }
+            }
+        }
+
+    ]
+              };
+
+
+              if (option6 && typeof option6 === "object") {
+                  myChart6.setOption(option6, true);
+              }
+     
+       </script> 
+          <script type="text/javascript">
+
+              var Dv1 = "Div7";
+              var Dname1 = '速度7';
+              var Dmin = 10;
+              var Dmid1 = 20;
+              var Dmid2 = 30;
+              var Dmax = 50;
+              var Dval = 40;
+              var dom1 = document.getElementById(Dv1);
+              var myChart7 = echarts.init(dom1);
+              var app = {};
+              option7 = null;
+              option7 = {
+
+                  series: [
+        {
+            name: Dname1,
+            type: 'gauge',
+            detail: { formatter: '{value}', fontSize: 15 },
+            data: [{ value: 50, name: Dname1}],
+            min: '0',
+            max: '45',
+            splitLine: { //分割线样式（及10、20等长线样式）
+                length: 10,
+                lineStyle: { // 属性lineStyle控制线条样式
+                    width: 0.5
+                }
+            },
+            axisTick: { //刻度线样式（及短线样式）
+                length: 1
+            },
+            axisLabel: { //文字样式（及“10”、“20”等文字样式）
+                color: "black",
+                distance: -25, //文字离表盘的距离
+                fontSize: 4
+            },
+            pointer: { //指针样式
+                length: '60%',
+                width: 3
+            },
+            axisLine: {
+                show: true,
+                lineStyle: { // 属性lineStyle控制线条样式
+                    color: [ //表盘颜色
+
+                             [Dmid1 / Dmax, "#0000FF"], //51%-70%处的颜色
+                              [Dmid2 / Dmax, "#FFFF00"], //70%-90%处的颜色
+                              [1, "#FF0000"]//90%-100%处的颜色
+                          ],
+                    width: 5//表盘宽度
+                }
+            }
+        }
+
+    ]
+              };
+
+
+              if (option7 && typeof option7 === "object") {
+                  myChart7.setOption(option7, true);
+              }
+     
+       </script> 
+          <script type="text/javascript">
+
+              var Dv1 = "Div8";
+              var Dname1 = '速度8';
+              var Dmin = 10;
+              var Dmid1 = 20;
+              var Dmid2 = 30;
+              var Dmax = 50;
+              var Dval = 40;
+              var dom1 = document.getElementById(Dv1);
+              var myChart8 = echarts.init(dom1);
+              var app = {};
+              option8 = null;
+              option8 = {
+
+                  series: [
+        {
+            name: Dname1,
+            type: 'gauge',
+            detail: { formatter: '{value}', fontSize: 15 },
+            data: [{ value: 50, name: Dname1}],
+            min: '0',
+            max: '45',
+            splitLine: { //分割线样式（及10、20等长线样式）
+                length: 10,
+                lineStyle: { // 属性lineStyle控制线条样式
+                    width: 0.5
+                }
+            },
+            axisTick: { //刻度线样式（及短线样式）
+                length: 1
+            },
+            axisLabel: { //文字样式（及“10”、“20”等文字样式）
+                color: "black",
+                distance: -25, //文字离表盘的距离
+                fontSize: 4
+            },
+            pointer: { //指针样式
+                length: '60%',
+                width: 3
+            },
+            axisLine: {
+                show: true,
+                lineStyle: { // 属性lineStyle控制线条样式
+                    color: [ //表盘颜色
+
+                             [Dmid1 / Dmax, "#0000FF"], //51%-70%处的颜色
+                              [Dmid2 / Dmax, "#FFFF00"], //70%-90%处的颜色
+                              [1, "#FF0000"]//90%-100%处的颜色
+                          ],
+                    width: 5//表盘宽度
+                }
+            }
+        }
+
+    ]
+              };
+
+
+              if (option8 && typeof option8 === "object") {
+                  myChart8.setOption(option8, true);
+              }
+     
+       </script> 
+
+         <script type="text/javascript">
+             setInterval(function () {
+
+                 var dv;
+                 var label2
+                 label2 = document.getElementById("Label2").innerText.trim();
+                 if (label2 == 0) {
+                     dv = document.getElementById("Div1");
+                     dv.style.display = 'none';
+                 }
+                 else {
+                     option1.series[0].data[0].value = label2;
+                     myChart1.setOption(option1, true);
+                 }
+                 label2 = document.getElementById("Label4").innerText.trim();
+                 if (label2 == 0) {
+                     dv = document.getElementById("Div2");
+                     dv.style.display = 'none';
+                 }
+                 else {
+                     option2.series[0].data[0].value = label2;
+                     myChart2.setOption(option2, true);
+                 }
+                 label2 = document.getElementById("Label6").innerText.trim();
+                 option3.series[0].data[0].value = label2;
+                 myChart3.setOption(option3, true);
+                 if (label2 == 0) {
+                     dv = document.getElementById("Div3");
+                     dv.style.display = 'none';
+                 }
+                 else {
+                     option3.series[0].data[0].value = label2;
+                     myChart3.setOption(option3, true);
+                 }
+
+                 label2 = document.getElementById("Label8").innerText.trim();
+                 if (label2 == 0) {
+                     dv = document.getElementById("Div4");
+                     dv.style.display = 'none';
+                 }
+                 else {
+                     option4.series[0].data[0].value = label2;
+                     myChart4.setOption(option4, true);
+                 }
+                 label2 = document.getElementById("Label10").innerText.trim();
+                 if (label2 == 0) {
+                     dv = document.getElementById("Div5");
+                     dv.style.display = 'none';
+                 }
+                 else {
+                     option5.series[0].data[0].value = 5; //label2;
+                     myChart5.setOption(option5, true);
+                 }
+                 label2 = document.getElementById("Label12").innerText.trim();
+                 if (label2 == 0) {
+                     dv = document.getElementById("Div6");
+                     dv.style.display = 'none';
+                 }
+                 else {
+                     option6.series[0].data[0].value = label2;
+                     myChart6.setOption(option6, true);
+                 }
+                 label2 = document.getElementById("Label14").innerText.trim();
+                 if (label2 == 0) {
+                     dv = document.getElementById("Div7");
+                     dv.style.display = 'none';
+                 }
+                 else {
+                     option7.series[0].data[0].value = label2;
+                     myChart7.setOption(option7, true);
+                 }
+                 label2 = document.getElementById("Label16").innerText.trim();
+                 if (label2 == 0) {
+                     dv = document.getElementById("Div8");
+                     dv.style.display = 'none';
+                     alert("label2 == 0");
+                 }
+                 else {
+                     option8.series[0].data[0].value = label2;
+                     myChart8.setOption(option8, true);
+                     alert("label2 != 0");
+                 }
+
+
+
+
+             }, 2000);
+             ;
+        </script> 
+
+         <div>
+     <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center" id="Table1" class="table_bordercolor">
+     <tr>
+     <td width="100">
+   
+     <asp:ScriptManager ID="ScriptManager1" runat="server" />
+        <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
+            <ContentTemplate>
+             <asp:Label ID="Label1" runat="server" Text="0"></asp:Label><asp:Label ID="Label2" runat="server" Text="0"></asp:Label> 
+     <asp:Label ID="Label3" runat="server" Text="0"></asp:Label><asp:Label ID="Label4" runat="server" Text="0"></asp:Label>
+     <asp:Label ID="Label5" runat="server" Text="0"></asp:Label><asp:Label ID="Label6" runat="server" Text="0"></asp:Label>
+    <asp:Label ID="Label7" runat="server" Text="0"></asp:Label><asp:Label ID="Label8" runat="server" Text="0"></asp:Label>
+     <asp:Label ID="Label9" runat="server" Text="0"></asp:Label><asp:Label ID="Label10" runat="server" Text="0"></asp:Label>
+       <asp:Label ID="Label11" runat="server" Text="0"></asp:Label><asp:Label ID="Label12" runat="server" Text="0"></asp:Label>
+    <asp:Label ID="Label13" runat="server" Text="0"></asp:Label><asp:Label ID="Label14" runat="server" Text="0"></asp:Label>
+      <asp:Label ID="Label15" runat="server" Text="0"></asp:Label><asp:Label ID="Label16" runat="server" Text="0"></asp:Label>
+    
+     
+                <asp:Timer ID="Timer1" runat="server" Interval="1000" OnTick="Timer1_Tick" />
+            </ContentTemplate>
+        </asp:UpdatePanel>
+
+     </td>
+     <td>
+         <asp:Image ID="Image1" runat="server"  Width="400" Height="400"  ImageUrl="~/Images/齿轮箱传动简图.jpg"/>
+         </td>
+        
+     
+     </tr>
+     <tr>
+     <td class="table_bgcolor" colspan="2">
+
+     <%-- <asp:ScriptManager ID="ScriptManager1" runat="server">
+        </asp:ScriptManager>
+         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+         <ContentTemplate>--%>
+        <asp:GridView ID="GridUser" runat="server" AutoGenerateColumns="False"  Width="100%" 
+                 BorderWidth="1px" CellPadding="3" DataKeyNames="ID" OnRowDataBound="GridUser_RowDataBound"
+                 PagerStyle-HorizontalAlign="right"  >
+                <%-- OnPageIndexChanging="GridUser_PageIndexChanging"  BorderStyle="None" 
+                 OnRowDeleting="GridUser_RowDeleting" OnRowDataBound="GridUser_RowDataBound" AllowPaging="True" --%>
+                
+                    <HeaderStyle HorizontalAlign="Center"  Font-Bold="True" BackColor="AliceBlue"/>
+                        
+                        <Columns>
+                            <asp:BoundField HeaderText="ID" DataField="ID">
+                            </asp:BoundField >
+                            
+                              <asp:BoundField HeaderText="机组编号" DataField="机组编号">
+                            </asp:BoundField >
+                           
+                            <asp:BoundField HeaderText="机组名称" DataField="机组名称">
+                            </asp:BoundField >
+                            <asp:BoundField HeaderText="时间" DataField="时间">
+                            </asp:BoundField >
+                            <asp:BoundField HeaderText="状态" DataField="状态">
+                            </asp:BoundField >
+                            <asp:BoundField HeaderText="状态描述" DataField="状态描述">
+                            </asp:BoundField >
+                          <%--   <asp:TemplateField HeaderText=" 角色授权" SortExpression="role_NAME"> 
+                            <HeaderStyle HorizontalAlign="Center" Width="100px" />
+                            <ItemStyle HorizontalAlign="Center" Width="100px" /> 
+                            <ItemTemplate>  
+                                 <a  href='RoleAssignment.aspx?UserName=<%# DataBinder.Eval(Container, "DataItem.USER_NAME") %>&UserId=<%# DataBinder.Eval(Container, "DataItem.USER_ID") %>&rolename= <%# DataBinder.Eval(Container, "DataItem.role_NAME")%>'>
+                                                            【<%# DataBinder.Eval(Container, "DataItem.role_NAME")%>】
+                                  </a> 
+                            </ItemTemplate>  
+                                 <FooterStyle BackColor="Red" />
+                            </asp:TemplateField> --%>
+                          <%--  <asp:TemplateField HeaderText="修改">
+                                <HeaderStyle HorizontalAlign="Center" Width="100px" />
+                                <ItemStyle HorizontalAlign="Center" Width="100px" />
+                                <ItemTemplate>                            
+                                    <asp:LinkButton ID="ChangeUser" runat="server" Width="40px" ForeColor="red" CommandName="Change"  OnClick ="lBtnAlter_Click" Text="修改">
+                                    </asp:LinkButton>
+                                </ItemTemplate>
+                            </asp:TemplateField>  --%>    
+                            
+                     <%--  <asp:TemplateField HeaderText="修改"> 
+                            <HeaderStyle HorizontalAlign="Center" Width="50px" />
+                            <ItemStyle HorizontalAlign="Center" Width="50px" /> 
+                            <ItemTemplate>  
+                                 <a  href='ChangeUser.aspx?UserName=<%# DataBinder.Eval(Container, "DataItem.USER_NAME") %> '>
+                                                            【修改】
+                                                        
+                                  </a> 
+                            </ItemTemplate>  
+                                 <FooterStyle BackColor="Red" Wrap="False" />
+                            </asp:TemplateField>
+                                              
+                            <asp:TemplateField HeaderText="删除"> 
+                            <HeaderStyle HorizontalAlign="Center" Width="100px" />
+                            <ItemStyle HorizontalAlign="Center" Width="100px" /> 
+                            <ItemTemplate>  
+                                <asp:LinkButton ID="lbtnDel" runat="server" ForeColor="red"  CausesValidation="False" CommandName="Delete"  
+                                    Text="删除" OnClientClick='<%#  "if (!confirm(\"你确定要删除" + Eval("USER_NAME").ToString() + "吗?\")) return false;"%>'>
+                                </asp:LinkButton>  
+                            </ItemTemplate>  
+                            </asp:TemplateField> --%>
+                             
+
+                        </Columns>
+                        <FooterStyle BackColor="White" ForeColor="#000066" />
+                        <RowStyle ForeColor="#000066" />
+                        <SelectedRowStyle BackColor="#669999" Font-Bold="True" ForeColor="White" />
+                        <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />
+                        <PagerSettings Visible="False" />
+                    </asp:GridView>  
+                
+                    <br />
+                <%--    <asp:label id="lblUserCount" runat="server" Width="130px" Height="16px" Font-Size="9pt"></asp:label><FONT face="宋体">&nbsp; 
+				&nbsp; </FONT>
+				<asp:label id="lblPageCount" runat="server" Font-Size="9pt" Font-Bold="True"></asp:label><FONT face="宋体">&nbsp;</FONT>
+				<asp:label id="lblCurrentIndex" runat="server" Font-Size="9pt" Font-Bold="True"></asp:label><FONT face="宋体">&nbsp;</FONT>
+				<asp:linkbutton id="btnFirst" runat="server" ForeColor="navy" CommandArgument="0" Font-size="9pt" OnClick="PagerButtonClick"></asp:linkbutton><FONT face="宋体">&nbsp;</FONT>
+				<asp:linkbutton id="btnPrev" runat="server" ForeColor="navy" CommandArgument="prev" Font-size="9pt" OnClick="PagerButtonClick"></asp:linkbutton><FONT face="宋体">&nbsp;</FONT>
+				<asp:linkbutton id="btnNext" runat="server" ForeColor="navy" CommandArgument="next" Font-size="9pt" OnClick="PagerButtonClick"></asp:linkbutton><FONT face="宋体">&nbsp;</FONT>
+				<asp:linkbutton id="btnLast" runat="server" ForeColor="navy" CommandArgument="last" Font-size="9pt" OnClick="PagerButtonClick"></asp:linkbutton><FONT face="宋体">&nbsp;
+                    </FONT>--%>
+ <%--</ContentTemplate> 
+   </asp:UpdatePanel>--%>
+     
+     </td>
+     
+     </tr>
+     </table>
+    </div>
+   </body>
+    </form>
+</body>
+</html>

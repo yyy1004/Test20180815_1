@@ -1,0 +1,530 @@
+body
+{
+background-color: #F8FBFE;
+scrollbar-base-color: #F0F7FF ;
+scrollbar-track-color: #F0F7FF;
+scrollbar-face-color: #D1E3FE ;
+scrollbar-highlight-color: #F0F7FF ;
+scrollbar-3dlight-color:  #F0F7FF ;
+scrollbar-darkshadow-color: #F0F7FF ;
+scrollbar-shadow-color: #F0F7FF ;
+scrollbar-arrow-color: #ff0000 ;
+font-size:9pt;
+}
+P
+{
+    FONT-SIZE: 12px;
+    COLOR: midnightblue;
+    FONT-FAMILY: 宋体;
+    TEXT-DECORATION: none;
+	margin-left: 40px;
+}
+
+H5
+{
+    FONT-SIZE: 12px;
+    COLOR: midnightblue;
+    FONT-FAMILY: 宋体;
+    TEXT-DECORATION: none
+}
+A
+{
+	cursor:hand;
+    FONT-SIZE: 12px;
+    COLOR: blue;
+    FONT-FAMILY: 宋体;
+    TEXT-DECORATION: none
+}
+/*定制超级链接的样式*/
+/*默认样式*/
+A:active
+{
+    FONT-SIZE: 12px;
+    COLOR: blue;
+    FONT-FAMILY: 宋体;
+    TEXT-DECORATION: none
+}
+A:link
+{
+    FONT-SIZE: 12px;
+    COLOR: blue;
+    FONT-FAMILY: 宋体;
+    TEXT-DECORATION: none
+}
+A:visited
+{
+    FONT-SIZE: 12px;
+    COLOR: blue;
+    FONT-FAMILY: 宋体;
+    TEXT-DECORATION: none
+}
+TD
+{
+    FONT-SIZE: 12px;
+    COLOR: black;
+    FONT-FAMILY: 宋体;
+    white-space:nowrap;
+}
+
+INPUT
+{
+	border-left: 1px None black;
+	border-right: 1px None black;
+	border-top: 1px None black;
+	background-color:Transparent;
+		border-bottom: 1px solid black;
+    	FONT-SIZE: 12px;
+    	LINE-HEIGHT: normal;
+    	FONT-STYLE: normal;
+    	FONT-FAMILY: 宋体;
+    	HEIGHT: 18px;
+    	TEXT-DECORATION: none;
+    	margin-left: 0px;
+}
+
+input.textbox {
+border:1px solid #9FD5F7;background-color:transparent;FONT-SIZE: 12px;
+}
+TEXTAREA {
+	border:1px solid #9FD5F7;background-color:transparent;
+	}
+TABLE.input-9-tb {
+	FONT-FAMILY: Arial; background-color:#fff;
+}
+TABLE.input-9-tbnone {
+	BORDER-RIGHT: lightslategray thin; BORDER-TOP: lightslategray thin; BORDER-LEFT: lightslategray thin; BORDER-BOTTOM: lightslategray thin; FONT-FAMILY: Arial; TEXT-ALIGN: center
+}
+TABLE.input-9-tb TH {
+	 BACKGROUND-REPEAT: repeat; FONT-FAMILY: 宋体; BACKGROUND-COLOR: #fff; TEXT-ALIGN: center
+}
+TABLE.input-9-tb TR {
+	FONT-SIZE: 12px;FONT-FAMILY: 宋体; BACKGROUND-COLOR: #ECF5FE; TEXT-ALIGN: left
+}
+.biaoti{background:#ECF5FE url(../../Images/topbgt.jpg) no-repeat top left;}
+.button{
+background:#fff url(../../Images/buttonbg.gif) no-repeat left top;
+width:100px;height:22px;
+font:bold 12px "宋体";color:#039;
+border:0;}
+.button02{
+background:#fff url(../../Images/buttonbg02.gif) no-repeat left top;
+width:74px;height:22px;
+font:bold 12px "宋体";color:#039;
+border:0;}
+.ReadOnlyShow {
+	BACKGROUND-COLOR: #dddddd
+}
+.Title_Bar
+{
+	border-bottom:solid 1px #D1E3FE;
+	/*border-top:solid 1px #D1E3FE;*/
+	filter: progid:DXImageTransform.Microsoft.Gradient(startColorStr='#F8FBFE', endColorStr='#D1E3FE', gradientType='0');
+	/*background-image: url(http://localhost/crm/Images/bg_bar.gif);*/
+}
+
+/*CSS按扭1*/
+TD.clsBtnUp {
+	BORDER-RIGHT: #f8fbfe 2px outset; PADDING-RIGHT: 3px; BORDER-TOP: #f8fbfe 2px outset; PADDING-LEFT: 3px; PADDING-BOTTOM: 0px; BORDER-LEFT: #f8fbfe 2px outset; CURSOR: hand; COLOR: #ffffff; PADDING-TOP: 0px; BORDER-BOTTOM: #f8fbfe 2px outset
+}
+TD.clsBtnDown {
+	BORDER-RIGHT: #f8fbfe 2px inset; PADDING-RIGHT: 3px; BORDER-TOP: #f8fbfe 2px inset; PADDING-LEFT: 3px; PADDING-BOTTOM: 0px; BORDER-LEFT: #f8fbfe 2px inset; CURSOR: hand; COLOR: #ffffff; PADDING-TOP: 0px; BORDER-BOTTOM: #f8fbfe 2px inset
+}
+TD.clsBtnOn {
+	BORDER-RIGHT: #f8fbfe 2px outset; PADDING-RIGHT: 3px; BORDER-TOP: #f8fbfe 2px outset; PADDING-LEFT: 3px; PADDING-BOTTOM: 0px; BORDER-LEFT: #f8fbfe 2px outset; CURSOR: hand; COLOR: #ffffff; PADDING-TOP: 0px; BORDER-BOTTOM: #f8fbfe 2px outset; BACKGROUND-COLOR: #336699
+}
+TD.clsBtnOff {
+	BORDER-TOP-WIDTH: 2px; PADDING-RIGHT: 3px; PADDING-LEFT: 3px; BORDER-LEFT-WIDTH: 2px; BORDER-LEFT-COLOR: #336666; BORDER-BOTTOM-WIDTH: 2px; BORDER-BOTTOM-COLOR: #336666; PADDING-BOTTOM: 0px; COLOR: #ffffff; BORDER-TOP-COLOR: #336666; PADDING-TOP: 0px; BORDER-RIGHT-WIDTH: 2px; BORDER-RIGHT-COLOR: #336666; tab-index: 0
+}
+TD.HelpInfo{color:Red;}
+TABLE.input-9-tb SELECT {
+	BORDER-RIGHT: #ff0000 10px solid; PADDING-RIGHT: 0px; BORDER-TOP: #ff0000 10px solid; PADDING-LEFT: 0px; FONT-SIZE: 12px; FLOAT: none; PADDING-BOTTOM: 0px; MARGIN: 0px; BORDER-LEFT: #ff0000 10px solid; PADDING-TOP: 0px; BORDER-BOTTOM: #ff0000 10px solid; FONT-FAMILY: 宋体; BACKGROUND-COLOR: #eef2ff
+}
+TABLE.input-9-tb TD.td_notnull {
+	TEXT-ALIGN: left
+}
+TABLE.input-9-tb TR.c_tr {
+	FONT-SIZE: 12px; FONT-FAMILY: 宋体
+}
+TABLE.input-9-tb TD.td_null {
+	TEXT-ALIGN: left
+}
+FORM.input-9-frm {
+	FONT-SIZE: 12px; FONT-FAMILY: 宋体
+}
+H2 {
+	FONT-SIZE: 15px; COLOR: midnightblue; FONT-FAMILY: 新宋体, 宋体; TEXT-ALIGN: center; TEXT-DECORATION: underline
+}
+TABLE.input-9-tb TD.title {
+	FONT-SIZE: 12px; FONT-FAMILY: 宋体; BACKGROUND-COLOR: #f6f6f6
+}
+TABLE.input-9-tb TD {
+	FONT-SIZE: 12px; FONT-FAMILY: 宋体; NOWRAP: NOWRAP
+}
+.colorscorollbar {
+	SCROLLBAR-FACE-COLOR: #d1e3fe; SCROLLBAR-HIGHLIGHT-COLOR: #f0f7ff; SCROLLBAR-SHADOW-COLOR: #f0f7ff; SCROLLBAR-3DLIGHT-COLOR: #f0f7ff; SCROLLBAR-ARROW-COLOR: #ff0000; SCROLLBAR-TRACK-COLOR: #f0f7ff; SCROLLBAR-DARKSHADOW-COLOR: #f0f7ff; SCROLLBAR-BASE-COLOR: #f0f7ff
+}
+
+.p1{font-family:宋体;font-size:12.5px;color:White}		/*字体1 10pt*/
+
+.RP
+{
+    FONT-SIZE: 12px;
+    COLOR: midnightblue;
+    FONT-FAMILY: 宋体;
+    TEXT-DECORATION: none
+}
+datagrid
+{
+	background :#ff0000
+}
+
+
+.gridHead
+{
+	BORDER-RIGHT: medium none; 
+	BORDER-TOP: medium none; 
+	FONT-SIZE: 8pt; 
+	BORDER-LEFT: medium none;
+	BORDER-BOTTOM: medium none;
+	BACKGROUND-COLOR: #DAE9FE;
+}
+.gridFooter {
+	BORDER-RIGHT: medium none; 
+	BORDER-TOP: medium none; 
+	FONT-SIZE: 12pt; 
+	BORDER-LEFT: medium none; 
+	BORDER-BOTTOM: medium none; 
+	BACKGROUND-color:White;
+}
+.gridHighlight 
+{
+	BACKGROUND-COLOR: #C9DEFE
+}
+.gridSelectedHighlight 
+{
+	BACKGROUND-COLOR: #C9DEFE
+}
+.gridOddRow {
+	FONT-SIZE: 10pt;
+	BACKGROUND-COLOR: #F0F7FF
+}
+.gridEvenRow {
+	FONT-SIZE: 10pt;
+	BACKGROUND-COLOR: #E6F1FF
+}
+.labelDesc
+{
+	DISPLAY: inline; 
+	FONT-SIZE: 12px; 
+	COLOR: red; 
+	HEIGHT: 15px
+}
+.ReadOnlyShow
+{
+	background-color:#dddddd;
+	
+}
+
+TABLE.input-9-stat
+{
+    BORDER-RIGHT: lightslategray thin;
+    BORDER-TOP: lightslategray thin;
+    BORDER-LEFT: lightslategray thin;
+    BORDER-BOTTOM: lightslategray thin;
+    FONT-FAMILY: Arial;
+    BACKGROUND-COLOR: #CADBFF
+}
+
+
+TABLE.input-9-stat TH
+{
+    BORDER-RIGHT: midnightblue 1pt;
+    BORDER-TOP: midnightblue 1pt;
+    FONT-SIZE: 12px;
+    BACKGROUND-IMAGE: none;
+    BORDER-LEFT: midnightblue 1pt;
+    BORDER-BOTTOM: midnightblue 1pt;
+    BACKGROUND-REPEAT: repeat;
+    FONT-FAMILY: 宋体;
+    BACKGROUND-COLOR: #EEF2FF;
+    TEXT-ALIGN: center
+}
+TABLE.input-9-stat TR
+{
+    BORDER-RIGHT: thin;
+    BORDER-TOP: thin;
+    FONT-SIZE: 12px;
+    BACKGROUND-IMAGE: none;
+    BORDER-LEFT: thin;
+    BORDER-BOTTOM: thin;
+    BACKGROUND-REPEAT: repeat;
+    FONT-FAMILY: 宋体;
+    BACKGROUND-COLOR: #EEF2FF;
+    TEXT-ALIGN: left
+}
+
+TABLE.input-9-stat SELECT
+{
+	border-bottom:solid 10px #ff0000 ;
+	border-top:solid 10px #ff0000 ;
+	border-left:solid 10px #ff0000 ;
+	border-right:solid 10px #ff0000 ;    
+    FONT-SIZE: 12px;
+    FONT-FAMILY: 宋体;
+	background-color:#EEF2FF ;
+	float:none  ;
+	padding:0 0 0 0 ;
+	margin:0 0 0 0 ;
+}
+
+
+TABLE.input-9-list
+{
+    BORDER-RIGHT: lightslategray thin;
+    BORDER-TOP: lightslategray thin;
+    BORDER-LEFT: lightslategray thin;
+    BORDER-BOTTOM: lightslategray thin;
+    FONT-FAMILY: Arial;
+    BACKGROUND-COLOR: #CADBFF
+}
+
+
+TABLE.input-9-list TH
+{
+    BORDER-RIGHT: midnightblue 1pt;
+    BORDER-TOP: midnightblue 1pt;
+    FONT-SIZE: 12px;
+    BACKGROUND-IMAGE: none;
+    BORDER-LEFT: midnightblue 1pt;
+    BORDER-BOTTOM: midnightblue 1pt;
+    BACKGROUND-REPEAT: repeat;
+    FONT-FAMILY: 宋体;
+    BACKGROUND-COLOR: #EEF2FF;
+    TEXT-ALIGN: center
+}
+TABLE.input-9-list TR
+{
+    BORDER-RIGHT: thin;
+    BORDER-TOP: thin;
+    FONT-SIZE: 12px;
+    BACKGROUND-IMAGE: none;
+    BORDER-LEFT: thin;
+    BORDER-BOTTOM: thin;
+    BACKGROUND-REPEAT: repeat;
+    FONT-FAMILY: 宋体;
+    BACKGROUND-COLOR: #EEF2FF;
+    TEXT-ALIGN: left
+}
+
+TABLE.input-9-list SELECT
+{
+	border-bottom:solid 10px #ff0000 ;
+	border-top:solid 10px #ff0000 ;
+	border-left:solid 10px #ff0000 ;
+	border-right:solid 10px #ff0000 ;    
+    FONT-SIZE: 12px;
+    FONT-FAMILY: 宋体;
+	background-color:#EEF2FF ;
+	float:none  ;
+	padding:0 0 0 0 ;
+	margin:0 0 0 0 ;
+}
+
+
+
+TABLE.input-9-title
+{
+    BORDER-RIGHT: lightslategray thin;
+    BORDER-TOP: lightslategray thin;
+    BORDER-LEFT: lightslategray thin;
+    BORDER-BOTTOM: lightslategray thin;
+    FONT-FAMILY: Arial;
+    BACKGROUND-COLOR: #CADBFF
+}
+
+
+TABLE.input-9-title TH
+{
+    BORDER-RIGHT: midnightblue 1pt;
+    BORDER-TOP: midnightblue 1pt;
+    FONT-SIZE: 12px;
+    BACKGROUND-IMAGE: none;
+    BORDER-LEFT: midnightblue 1pt;
+    BORDER-BOTTOM: midnightblue 1pt;
+    BACKGROUND-REPEAT: repeat;
+    FONT-FAMILY: 宋体;
+    BACKGROUND-COLOR: #EEF2FF;
+    TEXT-ALIGN: center
+}
+TABLE.input-9-title TR
+{
+    BORDER-RIGHT: thin;
+    BORDER-TOP: thin;
+    FONT-SIZE: 12px;
+    BACKGROUND-IMAGE: none;
+    BORDER-LEFT: thin;
+    BORDER-BOTTOM: thin;
+    BACKGROUND-REPEAT: repeat;
+    FONT-FAMILY: 宋体;
+    BACKGROUND-COLOR: #EEF2FF;
+    TEXT-ALIGN: left
+}
+
+TABLE.input-9-title SELECT
+{
+	border-bottom:solid 10px #ff0000 ;
+	border-top:solid 10px #ff0000 ;
+	border-left:solid 10px #ff0000 ;
+	border-right:solid 10px #ff0000 ;    
+    FONT-SIZE: 12px;
+    FONT-FAMILY: 宋体;
+	background-color:#EEF2FF ;
+	float:none  ;
+	padding:0 0 0 0 ;
+	margin:0 0 0 0 ;
+}
+/*领导查询里的线条说明样式*/
+HR.Vote
+{
+	/*background-image:url(../../images/vote.gif);
+	text-align:left;
+	height:9px;*/
+	text-align:left;
+	color:red;
+	height:1px;
+}
+
+/*招展工作台里的展商列表设置*/
+.NullBooth 
+{
+	CURSOR: hand;
+	COLOR: red;
+}/*空展台*/
+.LatentActor 
+{
+	CURSOR: hand;
+	 COLOR:orange;
+}/*潜在展商*/
+.IntentActor 
+{
+	CURSOR: hand;
+	 COLOR:Maroon;
+}/*意向展商*/
+.ContractActor 
+{
+	CURSOR: hand;
+	 COLOR: green;
+}/*签约展商*/
+.PartPayActor 
+{
+	CURSOR: hand;
+	 COLOR:Fuchsia;
+}/*部分付款展商*/
+.AllPayActor 
+{
+	CURSOR: hand;
+	 COLOR: blue;
+}/*全部付款展商*/
+.ExitActor {
+	CURSOR: hand;
+	 COLOR:Gray;
+}/*退展展商*/
+
+
+/*招展工作台里右边菜单设置*/
+.tab-on 
+{
+	filter:progid:DXImageTransform.Microsoft.Gradient(startColorStr='#D1E3FE', endColorStr='#F8FBFE', gradientType='0');
+	text-align:center; 
+	BORDER-RIGHT: outset 1px #cccccc; 
+	PADDING-RIGHT: 2px; 
+	BORDER-TOP: outset 1px #cccccc; 
+	PADDING-LEFT: 2px;
+	FONT-WEIGHT: bold; 
+	PADDING-BOTTOM: 2px; 
+	BORDER-LEFT: outset 1px #cccccc; 
+	CURSOR: hand; 
+	COLOR: #000000; 
+	PADDING-TOP: 2px; 
+	BORDER-BOTTOM: outset 0px #cccccc; 
+	BACKGROUND-COLOR: #f8fbfe 
+}
+.tab-off 
+{
+	/*filter: progid:DXImageTransform.Microsoft.Gradient(startColorStr='#F8FBFE', endColorStr='#D1E3FE', gradientType='0');*/
+	text-align:center; 
+	BORDER-RIGHT:solid 1px #cccccc; 
+	PADDING-RIGHT: 2px; 
+	BORDER-TOP: solid 1px #cccccc; 
+	PADDING-LEFT: 2px; 
+	PADDING-BOTTOM: 2px; 
+	BORDER-LEFT: solid 0px #cccccc; 
+	CURSOR: hand; 
+	COLOR: #666666; 
+	PADDING-TOP: 2px; 
+	BORDER-BOTTOM: outset 1px #cccccc; 
+	BACKGROUND-COLOR: #F8FBFE 
+}
+.tab-none 
+{
+	text-align:center;
+	BORDER-RIGHT:solid 1px #cccccc; 
+	PADDING-RIGHT: 2px; 
+	BORDER-TOP: solid 0px #cccccc; 
+	PADDING-LEFT: 2px; 
+	PADDING-BOTTOM: 2px; 
+	BORDER-LEFT: solid 0px #cccccc; 
+	PADDING-TOP: 2px; 
+	BORDER-BOTTOM:outset 1px #cccccc;  
+}
+
+/*付款计划样式*/
+.PayOff
+{
+	 COLOR: green;
+}
+/*已经付清显绿色*/
+.OnPay
+{
+	 COLOR: Maroon;
+}
+/*在催款期内未付清显黄色*/
+.OverDue
+{
+	 COLOR: red;
+}
+/*过期未付显红色*/
+.HideCol
+{
+	display:none;
+}
+
+td.bian1 {
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #CCCCCC;
+	text-align:center;
+	
+}
+.l13 {
+    font-family: Verdana, Helvetica, Geneva, sans-serif, Arial;
+	font-size: 11px;
+	line-height: 180%;
+	color: #333333;
+}
+
+div#main { margin:30 }
+a.info {
+ position:relative; z-index:0; color:#000; text-decoration:none; }
+a.info:hover { 
+ z-index:1; background-color:#ff0 }
+a.info span {  display: none }
+a.info:hover span { display:block; position:absolute; top:25px; left:60px; width:130px; border:1px solid #0cf; background-color:#cff; color:#000; text-align: center }
+
+.table_right1 th{
+	text-indent: 10px;
+	text-align:left;
+	font:bold 14px Verdana, Arial, Helvetica, sans-serif;
+	color:#1f479a;
+	height:20px;
+}

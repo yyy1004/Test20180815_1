@@ -1,0 +1,314 @@
+﻿a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+#mylayout .head {
+    /*background-color: #6a90b8;*/
+   background-image: linear-gradient(to right, #0070b8 0, #6291be 62%);
+    width: 100%;
+    height: 93px;
+    position: relative;
+}
+
+    #mylayout .head .head-jjimg {
+        /*float:right;*/
+        /*width:500px;*/
+        height: 100%;
+        position: absolute;
+        right: 0px;
+        margin-left: 820px;
+    }
+
+        #mylayout .head .head-jjimg img {
+            width: 100%;
+            height: 100%;
+        }
+    /*div100%填充*/
+    #mylayout .head .head-color {
+        height: 100%;
+        width: 820px;
+        /*border:1px solid green;*/
+        /*margin-right:500px;*/
+        /*background-image: linear-gradient(to left, #6a90b8 0, #38b 100%);*/
+        background-repeat: no-repeat;
+        height: 93px;
+    }
+
+        #mylayout .head .head-color .hd-logo-wrap {
+            float: left;
+            height: 100px;
+            width: 300px;
+        }
+
+
+        #mylayout .head .head-color .hd-logo {
+            width: 100%;
+            height: 93px;
+            display: table-cell;
+        }
+
+            #mylayout .head .head-color .hd-logo img {
+                height: 60px;
+                display: inline-block;
+                margin-left: 15px;
+                margin-top: 15px;
+            }
+
+        #mylayout .head .head-color .pipe {
+            color: #fff;
+            float: left;
+            width: 20px;
+            /*height:83px;*/
+            /*background-color:red;*/
+            /*font-size:44px;*/
+            /*background-image:linear-gradient(to down,red,blue);*/
+        }
+
+        #mylayout .head .head-color .txt-wrap {
+            float: left;
+            height: 100%;
+            width: 520px;
+            /*background-color:red;*/
+        }
+
+        #mylayout .head .head-color .hd-txt {
+            color: #fff;
+        }
+
+        #mylayout .head .head-color .hd-txten {
+            color: #ddd;
+        }
+
+        #mylayout .head .head-color .hd-txt div {
+            font-size: 36px;
+            margin-top: 11px;
+            font-family: Microsoft YaHei;
+            text-shadow: #000 0.1em 0.2em 0.4em;
+            letter-spacing: 8px;
+            text-align: center;
+        }
+
+        #mylayout .head .head-color .hd-txten div {
+            font-size: 16px;
+            margin-top: 6px;
+            font-family: Microsoft YaHei;
+            text-shadow: #000 0.0em 0.0em 0.0em;
+            letter-spacing: 0px;
+            text-align: center;
+        }
+
+#west-tree {
+    /*background-color:red;*/
+    /*background:url(/Images/HRMleftbg.jpg) no-repeat;
+    background-size:100% 100%;*/
+    /*background-image: -webkit-linear-gradient(left,#fff 0,#ccf3f3 100%);*/
+        background-image: -webkit-linear-gradient(left,#fff 0,#0070b8 280%);
+    background-image: -o-linear-gradient(left,#fff 0,#0070b8 280%);
+    background-image: linear-gradient(to right,#fff,#0070b8 280%);
+    background-repeat: repeat-x;
+}
+
+.layout-panel-center .panel-header {
+    color: #575765;
+    /*font-family:Georgia,Serif;*/
+    font-weight: 700;
+    position: relative;
+    font-size: 14px;
+}
+
+.exit-wrap {
+    /*background-color:red;*/
+    width: 400px;
+    height: 30px;
+    position: absolute;
+    right: 30px;
+    top: 0px;
+}
+
+    .exit-wrap .hd-tip {
+        float: right;
+        /*text-align:center;*/
+        vertical-align: middle;
+        /*border:1px solid black;*/
+        height: 30px;
+    }
+
+        .exit-wrap .hd-tip .role {
+            height: 30px;
+            line-height: 30px;
+            display: inline-block;
+        }
+
+    .exit-wrap .exit {
+        float: right;
+        height: 30px;
+        margin-right: 10px;
+        margin-left: 30px;
+    }
+
+        .exit-wrap .exit a {
+            height: 30px;
+            line-height: 30px;
+            display: inline-block;
+        }
+
+            .exit-wrap .exit a:hover {
+                color: #f40;
+            }
+
+.footer-wrap {
+    width:100%;
+    height:28px;
+    /*background-color:red;*/
+            background-image: -webkit-linear-gradient(left,#fff 0,#0070b8 280%);
+    background-image: -o-linear-gradient(left,#fff 0,#0070b8 280%);
+    background-image: linear-gradient(to bottom,#fff,#0070b8 180%);
+    background-repeat: repeat-x;
+
+}
+
+/*.footer-wrap {*/
+    /*background-color:#006eb7;*/
+    /*width: 100%;*/
+    /*height: 28px;*/
+    /*position: fixed;*/
+    /*z-index: 999;*/
+    /*left: 0;
+    bottom: 0;*/
+    /*background-image: -prefix-linear-gradient(bottom, #83cafa, #0979c4 80%,#034571);*/
+    /*background-image: linear-gradient(to bottom, #8ce7f7, #0979c4 70%,#034571);*/
+    /*opacity: 0.9;*/
+/*}*/
+
+
+    .footer-wrap .con {
+        width: 330px;
+        height: 28px;
+        position: relative;
+        /*background:yellow;*/
+        margin: 0 auto;
+        font-size: 12px;
+        color: #3C3C3C;
+        /*border:1px solid black;*/
+    }
+
+        .footer-wrap .con .mymargin {
+            margin-right: 15px;
+        }
+
+        .footer-wrap .con .technical-support {
+            float: left;
+            height: 28px;
+            line-height: 28px;
+            display: inline-block;
+            /*margin-right:20px;*/
+        }
+
+        .footer-wrap .con .owner {
+            float: left;
+            /*margin-right: 20px;*/
+            line-height: 28px;
+            display: inline-block;
+        }
+
+        .footer-wrap .con .www {
+            float: left;
+            line-height: 28px;
+            display: inline-block;
+            /*margin-right:20px;*/
+            height: 28px;
+           
+        }
+
+        .www:hover{
+            color:#db251a
+        }
+        .footer-wrap .con .tel {
+            float: left;
+            line-height: 28px;
+            display: inline-block;
+        }
+
+
+.infoandexit {
+    width: 500px;
+    height: 25px;
+    /*background-color: red;*/
+    position: absolute;
+    top: 1px;
+    right: 50px;
+    /*opacity: 0.5;*/
+    font-size: 14px;
+    /*font-weight:700;*/
+}
+
+    .infoandexit .info {
+        float: right;
+        height: 30px;
+    }
+
+    .infoandexit .exit {
+        float: right;
+        height: 30px;
+        margin-right: 10px;
+        margin-left: 30px;
+    }
+
+        .infoandexit .exit a {
+            display: inline-block;
+            height: 30px;
+            line-height: 30px;
+        }
+
+            .infoandexit .exit a:hover {
+                color: #f40;
+            }
+
+    .infoandexit .info a {
+        display: inline-block;
+        height: 30px;
+        line-height: 30px;
+    }
+
+        .infoandexit .info a:hover {
+            color: #f40;
+        }
+
+#myform {
+    /*margin:0 auto;*/
+}
+
+#dlg-btn {
+    /*margin-left:400px*/
+}
+
+.textbox-label-before {
+    /*width:150px;
+            display:block;*/
+}
+
+.textbox-invalid {
+    /*width:300px;*/
+    /*display:block;*/
+}
+
+.textbox-label {
+    width: 120px;
+    display: block;
+}
+
+.dialog-button .l-btnowner {
+    margin-right: 10px;
+}

@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="pragma" content="no-cache" />
+    <script src="/Scripts/loading.js" type="text/javascript"></script>
+    <link href="/EasyUI/themes/icon.css" rel="stylesheet" type="text/css" />
+    <link href="/EasyUI/themes/gray/easyui.css" rel="stylesheet" type="text/css" />
+    <script src="/EasyUI/jquery.min.js" type="text/javascript"></script>
+    <script src="/EasyUI/jquery.easyui.min.js" type="text/javascript"></script>
+    <script src="/Scripts/distinguishBrowser.js" type="text/javascript"></script>
+    <script src="../EasyUI/locale/easyui-lang-zh_CN.js" type="text/javascript"></script>
+</head>
+<body>
+    <table id="dg" class="easyui-datagrid" title="集团详情" url="/JT/JTHandler.ashx?action=GetJTJZState"
+        toolbar="#toolbar" rownumbers="true" fitcolumns="true" singleselect="true">
+        <thead>
+            <tr>
+                <th field="GCName" width="50" data-options="align:'center'">
+                    工厂名称
+                </th>
+                <th field="Total" width="50" data-options="align:'center'">
+                    总机组数
+                </th>
+                <th field="Work" width="50" data-options="align:'center',formatter:gzformatter">
+                    工作机组数
+                </th>
+                <th field="Warn" width="50" data-options="align:'center',formatter:gzjzformatter">
+                    报警故障机组数
+                </th>
+            </tr>
+        </thead>
+    </table>
+    <script type="text/javascript">
+        //格式化函数
+        function gzjzformatter(val, row, index) {
+            var num = row.Warn;
+            var gname = row.GCName;
+            if (num > 0) {
+                var s = "<a href='#' onclick='enterdetails(\"" + gname + "\")'><font color='red'>" + num + "</font></a>";
+                return s;
+            } else {
+                return 0;
+            }
+        }
+        function gzformatter(val, row, index) {
+            return row.Total - row.Warn;
+        }
+        //进入详情
+        function enterdetails(name) {
+            //执行数据删除操作
+            $.ajax({
+                url: '/JZ/JZHandler.ashx?action=StoreGCName',
+                type: 'POST',
+                data: {
+                    GCName: name
+                },
+                success: function (data) {
+                    location.href = '/JZ/Detail.html';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Common.ExcelHelper" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAgAAAAAAIAAAAAAAQAAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>ExcelHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Common.JsonHelper&lt;T&gt;" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAABAAA=</HashCode>
+      <FileName>JsonHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Common.MenuHelper" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAACABAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>MenuHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Common.SelectorHelper" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAEAAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SelectorHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Common.Item" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAACAAAAAI=</HashCode>
+      <FileName>SelectorHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Common.Tree&lt;T&gt;">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAiAABAAAAAIABAAAAARAAAACAAABAAIAAAAAEIIAA=</HashCode>
+      <FileName>Tree.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="JrscSoft.Common.Functions" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>FIAAggEDAEYAoKAQAAQCCAAHgABCAAAIMAAIBEECAEE=</HashCode>
+      <FileName>Functions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="JrscSoft.Common.Globals" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAAAAAAAAAAAAIQAAAQACAAAAQAAAA=</HashCode>
+      <FileName>Globals.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="JrscSoft.Common.PageBase" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIADAIAAAAQAAiAAAAACRIhAAACEAhAhBMICIgiAAAI=</HashCode>
+      <FileName>PageBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="JrscSoft.Common.PreViewColumn" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAABAAAggAAAYAAAAEAAAAQAAAAECAAAAAgAAgA=</HashCode>
+      <FileName>PreViewColumn.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="JrscSoft.Common.PreViewColumnCollection" Collapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEIAAEAAAAAAAAAACAAABAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>PreViewColumn.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="JrscSoft.Common.SqlHelper" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="JrscSoft.Common.SqlHelper.SqlConnectionOwnership" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>SqlHelper.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>ACCAAAiAAAAAACQkABAEBECAgAAAAAABAAAAAAIAAIA=</HashCode>
+      <FileName>SqlHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="JrscSoft.Common.SqlHelperParameterCache" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAEEGAAIAAAAQAAARAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SqlHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="JrscSoft.Common.DBHelper" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAIAACAAoAAAAAAAAAAACKAAAAgAAACAAACAAAA=</HashCode>
+      <FileName>SqlHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="JrscSoft.Common.TabSel" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgQQAAGAAAAAgACIAAAIAEAAAEAAAAAAgQBAESCAAAA=</HashCode>
+      <FileName>TabSel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="JrscSoft.Common.Validation" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIgIAAIAAAAAAAAACAAAAAAAAAQAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Validation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="JrscSoft.Common.WebUI" Collapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>WebUI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>

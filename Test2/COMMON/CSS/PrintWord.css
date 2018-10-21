@@ -1,0 +1,49 @@
+input 
+{
+	 BORDER-RIGHT: medium none;
+	 BORDER-TOP: medium none;  
+	 FONT-SIZE: 12px; 
+	 BORDER-LEFT: medium none; 
+	 COLOR: #000000; 
+	 BORDER-BOTTOM: medium none; 
+	 FONT-FAMILY: ËÎÌו; 
+ }
+
+select 
+{
+	 BORDER-RIGHT: medium none;
+	 BORDER-TOP: medium none;  
+	 FONT-SIZE: 12px; 
+	 BORDER-LEFT: medium none; 
+	 COLOR: #000000; 
+	 BORDER-BOTTOM: medium none; 
+	 FONT-FAMILY: ËÎÌו; 
+ }
+	
+table 
+{ 
+	font-size:12px; 
+	FONT-FAMILY: ËÎÌו;  
+	BORDER-RIGHT: medium none; 
+	BORDER-TOP: medium none; 
+	BORDER-LEFT: medium none; 
+	/*WIDTH: 428.6pt; */
+	BORDER-BOTTOM: medium none; 
+	BORDER-COLLAPSE: collapse; 
+	mso-border-alt: solid windowtext .5pt; 
+	mso-padding-alt: 0cm 5.4pt 0cm 5.4pt 
+}
+.colorscorollbar
+{
+scrollbar-base-color: #F0F7FF ;
+scrollbar-track-color: #F0F7FF;
+scrollbar-face-color: #D1E3FE ;
+scrollbar-highlight-color: #F0F7FF ;
+scrollbar-3dlight-color:  #F0F7FF ;
+scrollbar-darkshadow-color: #F0F7FF ;
+scrollbar-shadow-color: #F0F7FF ;
+scrollbar-arrow-color: #ff0000 ;
+}
+hr {
+	border: 1px dotted #000000;
+}

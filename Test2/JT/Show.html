@@ -1,0 +1,450 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="pragma" content="no-cache" />
+    <script src="/Scripts/loading.js" type="text/javascript"></script>
+    <link href="/EasyUI/themes/icon.css" rel="stylesheet" type="text/css" />
+    <link href="/EasyUI/themes/gray/easyui.css" rel="stylesheet" type="text/css" />
+    <script src="/EasyUI/jquery.min.js" type="text/javascript"></script>
+    <script src="/EasyUI/jquery.easyui.min.js" type="text/javascript"></script>
+    <script src="/Scripts/distinguishBrowser.js" type="text/javascript"></script>
+    <script src="../EasyUI/locale/easyui-lang-zh_CN.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        //表格宽度自适应，这里的#dg是datagrid表格生成的div标签
+        function fitCoulms() {
+            $('#dd').datagrid({
+                fitColumns: true
+            });
+        }
+        $(function () {
+            //初始加载，表格宽度自适应
+            $(document).ready(function () {
+                fitCoulms();
+            });
+            //浏览器窗口大小变化后，表格宽度自适应
+            $(window).resize(function () {
+                fitCoulms();
+            });
+            var datagrid; //定义全局变量datagrid
+            var editRow = undefined; //定义全局变量：当前编辑的行
+            datagrid = $("#dd").datagrid({
+                url: '/JT/JTHandler.ashx?action=GetAllJTInfo', //请求的数据源
+                title: '集团列表',
+                iconCls: 'icon-edit', //图标
+                pagination: true, //显示分页
+                pageSize: 10, //页大小
+                pageList: [10, 20, 30, 40], //页大小下拉选项此项各value是pageSize的倍数
+                fit: true, //datagrid自适应宽度
+                fitColumn: true, //列自适应宽度
+                striped: true, //行背景交换
+                nowap: true, //列内容多时自动折至第二行
+                border: true,
+                idField: 'ID', //主键
+                remoteSort:false,
+                columns: [[//显示的列
+                {field: 'ck', checkbox: true },
+                 { field: 'ID', title: '集团编号', width: 80, sortable: true, align: 'center' , editor: { type: 'label' },hidden:true},
+                { field: 'Name', title: '集团名称', width: 180, sortable: true, align:'center',
+                    editor: { type: 'validatebox', options: { required: true} }
+                },
+                { field: 'Phone', title: '集团电话', width: 120, align: 'center',
+                    editor: { type: 'validatebox', options: { required: true} }
+                },
+                { field: 'Address', title: '集团地址', width: 200, align: 'center',
+                    editor: { type: 'validatebox', options: { required: true} }
+                },
+                { field: 'Email', title: '集团邮箱', width: 200, align: 'center',
+                    editor: { type: 'validatebox', options: { required: true} }
+                },
+                { field: 'PostAddress', title: '集团邮编', width: 100, align: 'center',
+                    editor: { type: 'text' }
+                },
+                { field: 'JW', title: '集团经纬度', width: 100, align: 'center',
+                    editor: { type: 'text' }
+                },
+                { field: 'Introduce', title: '集团介绍', width: 100, align: 'center',
+                    editor: { type: 'text' }
+                }
+                ]],
+                queryParams: { action: 'query' }, //查询参数
+                toolbar: [{
+                    text: '添加', iconCls: 'icon-add', id: 'btn-add', handler: function () {//添加列表的操作按钮添加，修改，删除等
+                    //添加时先判断是否有开启编辑的行，如果有则把开户编辑的那行结束编辑
+                    if (editRow != undefined) {
+                        datagrid.datagrid("endEdit", editRow);
+                    }
+                    //添加时如果没有正在编辑的行，则在datagrid的第一行插入一行
+                    if (editRow == undefined) {
+                        datagrid.datagrid("insertRow", {
+                            index: 0, // index start with 0
+                            row: {
+
+                            }
+                        });
+                        //将新插入的那一行开户编辑状态
+                        datagrid.datagrid("beginEdit", 0);
+                        //给当前编辑的行赋值
+                        editRow = 0;
+                        //选中首行
+                        datagrid.datagrid('unselectAll');
+                        datagrid.datagrid('selectRow', 0); //选中该行
+                        //$('#btn-add').linkbutton('enable');
+                        $('#btn-remove').linkbutton('disable');
+                        $('#btn-edit').linkbutton('disable');
+                        $('#btn-save').linkbutton('enable');
+                        //$('#btn-redo').linkbutton('enable');
+                    }
+                }
+                }, '-',
+                 { text: '删除', iconCls: 'icon-remove', id:'btn-remove',handler: function () {
+                     //删除时先获取选择行
+                     var rows = datagrid.datagrid("getSelections");
+                     //选择要删除的行
+                     if (rows.length > 0) {
+                         $.messager.confirm("提示", "你确定要删除吗?（" + rows.length + "条）", function (r) {
+                             if (r) {
+                                 //获取所有要删除的用户的编号
+                                 var ids = [];
+                                 for (var i = 0; i < rows.length; i++) {
+                                     ids.push(rows[i].Name);
+                                 }
+                                 //执行数据删除操作
+                                 $.ajax({
+                                     url: '/JT/JTHandler.ashx?action=Delete',
+                                     type: 'POST',
+                                     data: {
+                                         Id: ids.join(',')
+                                     },
+                                     beforeSend: function () {
+                                         $.messager.progress({
+                                             text: '正在处理中...'
+                                         });
+                                     },
+                                     success: function (data) {
+                                         $.messager.progress('close');
+                                         data = eval('(' + data + ')');  //将一个json字符串解析成js对象
+                                         if (data.Success) {
+                                             //$("#dg").datagrid('loadData', data);
+                                             $("#dd").datagrid('reload');
+                                             $("#dd").datagrid('unselectAll');
+                                             $.messager.show({
+                                                 title: '操作提醒',
+                                                 msg: data.Message
+                                             })
+                                         } else {
+                                             $.messager.alert('删除失败', data.Message, 'warning');
+                                         }
+                                     }
+                                 });
+                             }
+                         });
+                     }
+                     else {
+                         $.messager.alert("提示", "请选择要删除的行", "error");
+                     }
+                 }
+                 }, '-',
+
+                       {
+                           text: '修改', iconCls: 'icon-edit', id: 'btn-edit', handler: function () {
+                               //修改时要获取选择到的行
+                               var rows = datagrid.datagrid("getSelections");
+                               //如果只选择了一行则可以进行修改，否则不操作
+                               if (rows.length == 1) {
+                                   //修改之前先关闭已经开启的编辑行，当调用endEdit该方法时会触发onAfterEdit事件
+                                   if (editRow != undefined) {
+                                       datagrid.datagrid("endEdit", editRow);
+                                   }
+                                   //当无编辑行时
+                                   if (editRow == undefined) {
+                                       //获取到当前选择行的下标
+                                       var index = datagrid.datagrid("getRowIndex", rows[0]);
+                                       //把当前开启编辑的行赋值给全局变量editRow
+                                       editRow = index;
+                                       //当开启了当前选择行的编辑状态之后，
+                                       //应该取消当前列表的所有选择行，要不然双击之后无法再选择其他行进行编辑
+                                       datagrid.datagrid("unselectAll");
+                                       //选中修改行的时候，传过去了编辑行的索引号，会取消修改行的索引号。所以在后面重新给编辑行赋值索引号
+                                       datagrid.datagrid('selectRow', index); //选中该行,还可以用checkRow
+                                       //开启编辑
+                                       datagrid.datagrid("beginEdit", index);
+                                       //再次赋值
+                                       editRow = index;
+                                   }
+                               }
+                               else {
+                                   $.messager.alert("提示", "请选择一行修改！", "error");
+                               }
+                           }
+                       }, '-',
+
+                 { text: '保存', iconCls: 'icon-save',  id:'btn-save',handler: function () {
+                     //保存时结束当前编辑的行，自动触发onAfterEdit事件如果要与后台交互可将数据通过Ajax提交后台
+                     datagrid.datagrid("endEdit", editRow);
+                 }
+                 }, '-',
+                 { text: '取消编辑', iconCls: 'icon-redo',id:'btn-redo', handler: function () {
+                     //取消当前编辑行把当前编辑行罢undefined回滚改变的数据,取消选择的行
+                     editRow = undefined;
+                     datagrid.datagrid("rejectChanges");
+                     datagrid.datagrid("unselectAll");
+                 }
+                 }, '-'],
+
+                onBeforeEdit: function (index, row) {
+                    //tmpRowData = row;
+                    //datagrid.datagrid('unselectAll');
+                    //datagrid.datagrid('selectRow', index); //选中该行
+                    tmpRowData = row;//tmpRowData为全局变量，负责存放待修改行的数据（json格式）
+                    datagrid.datagrid('unselectAll');
+                    datagrid.datagrid('selectRow', index);
+                },
+                onBeginEdit: function (index, row) {
+                    $('#btn-edit').linkbutton('disable');
+                    $('#btn-save').linkbutton('enable');
+                    //var target1 = datagrid.datagrid('getEditor', { index: index, field: 'Role' }).target;
+                    //target1.combobox({ editable: false });  //不可以输入，只可以选择
+                },
+                onAfterEdit: function (rowIndex, rowData, changes) {
+                    //endEdit该方法触发此事件 
+                    var inserted = datagrid.datagrid('getChanges', 'inserted');
+                    var updated = datagrid.datagrid('getChanges', 'updated');
+                    if (inserted.length < 1 && updated.length < 1) {
+                        editRow = undefined;
+                        datagrid.datagrid('unselectAll');
+                        return;
+                    }
+                    var url = '';
+                    if (inserted.length > 0) {
+                        url = '/JT/JTHandler.ashx?action=Add';
+                    }
+                    if (updated.length > 0) {
+                        url = '/JT/JTHandler.ashx?action=Update';
+                    }
+                    //更新数据库
+                    $.ajax({
+                        url: url,
+                        type: 'POST',
+                        data: {
+                          'ID': rowData.ID,
+                            'Name': rowData.Name,
+                            'Address': rowData.Address,
+                            'PostAddress': rowData.PostAddress,
+                            'Introduce': rowData.Introduce,
+                            'Phone': rowData.Phone,
+                            'Email': rowData.Email,
+                            'JW': rowData.JW
+                        },
+                        beforeSend: function () {
+                            $.messager.progress({
+                                text: '正在处理中...'
+                            })
+                        },
+                        success: function (data) {
+                            $.messager.progress('close');
+                            data = eval('(' + data + ')');      //将一个json字符串解析成js对象
+                            if (data.Success) {
+                                datagrid.datagrid("acceptChanges");
+                                $.messager.show({
+                                    title: '操作提示',
+                                    msg: data.Message
+                                });
+                                editRow = undefined;
+                                datagrid.datagrid("reload");
+                                $('#addcheck').val(1);
+                            } else {
+                                datagrid.datagrid("beginEdit", editRow);
+                                $('#btn-remove').linkbutton('disable');
+                                $.messager.alert('警告操作', '未知错误！请重新刷新后提交！', 'warning');
+                                return;
+                            }
+                            datagrid.datagrid("unselectAll");
+                        }
+                    });
+                },
+                //onDblClickRow: function (rowIndex, rowData) {
+                //    datagrid.datagrid('unselectAll');
+                //    datagrid.datagrid('selectRow', rowIndex); //选中该行
+                //    //双击开启编辑行
+                //    if (editRow != undefined) {
+                //        datagrid.datagrid("endEdit", editRow);
+                //    }
+                //    if (editRow == undefined) {
+                //        datagrid.datagrid("beginEdit", rowIndex);
+                //        editRow = rowIndex;
+                //    }
+                //},
+                onLoadSuccess: function () {
+                    var rows = datagrid.datagrid('getSelections');
+                    if (rows.length == 1) {
+                        $('#btn-add').linkbutton('disable');
+                        $('#btn-remove').linkbutton('enable');
+                        $('#btn-edit').linkbutton('enable');
+                        $('#btn-save').linkbutton('enable');
+                        $('#btn-redo').linkbutton('enable');
+                    } else if (rows.length > 1) {
+                        $('#btn-add').linkbutton('disable');
+                        $('#btn-remove').linkbutton('enable');
+                        $('#btn-edit').linkbutton('disable');
+                        $('#btn-save').linkbutton('enable');
+                        $('#btn-redo').linkbutton('enable');
+                    } else {
+                        $('#btn-add').linkbutton('enable');
+                        $('#btn-remove').linkbutton('disable');
+                        $('#btn-edit').linkbutton('disable');
+                        $('#btn-save').linkbutton('disable');
+                        $('#btn-redo').linkbutton('disable');
+                    }
+                },
+                //双击行
+                onDblClickRow: function (rowIndex, rowData) {
+                    datagrid.datagrid('unselectAll');
+                    datagrid.datagrid('selectRow', rowIndex); //选中该行
+                    //双击开启编辑行
+                    //这里通过开启选择行来控制，不需要这里添加
+                    //$('#btn-add').linkbutton('disable');
+                    //$('#btn-remove').linkbutton('disable');
+                    //$('#btn-edit').linkbutton('enable');
+                    //$('#btn-save').linkbutton('enable');
+                    //$('#btn-redo').linkbutton('enable');
+                    if (editRow != undefined) {
+                        datagrid.datagrid("endEdit", editRow);
+                    }
+                    if (editRow == undefined) {
+                        datagrid.datagrid("beginEdit", rowIndex);
+                        editRow = rowIndex;
+                        //datagrid.datagrid('selectRow', rowIndex);//--选中该行,还可以用checkRow，这里和单机 修改按钮一致
+                    }
+                },
+                //点击行
+                onClickRow: function () {
+                    var rows = datagrid.datagrid('getSelections');
+
+                    // alert(rows.length);
+                    //如果当前有编辑行，则enable，否则disable
+                    if (editRow == undefined) {//没有编辑行,或者有编辑行但选中行数大于1
+                        //-- || (editRow != undefined && rows.length >= 0)
+                        $('#btn-save').linkbutton('disable');
+                    } else {
+                        $('#btn-save').linkbutton('enable');
+                        $('#btn-edit').linkbutton('disable');
+                    }
+
+                    if (rows.length == 1) {
+                        $('#btn-add').linkbutton('disable');
+                        $('#btn-remove').linkbutton('enable');
+                        // $('#btn-edit').linkbutton('enable');
+                        //  $('#btn-save').linkbutton('enable');
+                        $('#btn-redo').linkbutton('enable');
+                    } else if (rows.length > 1) {
+                        $('#btn-add').linkbutton('disable');
+                        $('#btn-remove').linkbutton('enable');
+                        // $('#btn-edit').linkbutton('disable');
+                        //   $('#btn-save').linkbutton('enable');
+                        $('#btn-redo').linkbutton('enable');
+                    } else {
+                        $('#btn-add').linkbutton('enable');
+                        $('#btn-remove').linkbutton('disable');
+                        // $('#btn-edit').linkbutton('disable');
+                        //  $('#btn-save').linkbutton('disable');
+                        $('#btn-redo').linkbutton('disable');
+                    }
+                },
+                //点复选框
+                onSelect: function () {
+                    var rows = datagrid.datagrid('getSelections');
+                    //无编辑行---不显示‘保存’
+                    if (editRow == undefined) {
+                        $('#btn-save').linkbutton('disable')
+                    }
+                        //有编辑行  则取消编辑行
+                    else {
+                        if (rows.length > 1) {
+                            //若有有编辑行，则取消编辑行，即编辑行的索引号取消，数据修改也取消。
+                            datagrid.datagrid('unselectRow', editRow);//取消选择 正在编辑的行。
+                            editRow = undefined;
+                            datagrid.datagrid('rejectChanges');
+                            // $('#btn-save').linkbutton('enable')
+                        }
+                    }
+                    if (rows.length == 1) {
+                        $('#btn-add').linkbutton('disable');
+                        $('#btn-remove').linkbutton('enable');
+                        $('#btn-edit').linkbutton('enable');
+                        //  $('#btn-save').linkbutton('enable');
+                        $('#btn-redo').linkbutton('enable');
+                    } else if (rows.length > 1) {
+                        $('#btn-add').linkbutton('disable');
+                        $('#btn-remove').linkbutton('enable');
+                        $('#btn-edit').linkbutton('disable');
+                        //    $('#btn-save').linkbutton('enable');
+                        $('#btn-redo').linkbutton('enable');
+                    } else {
+                        $('#btn-add').linkbutton('enable');
+                        $('#btn-remove').linkbutton('disable');
+                        $('#btn-edit').linkbutton('disable');
+                        // $('#btn-save').linkbutton('disable');
+                        $('#btn-redo').linkbutton('disable');
+                    }
+                },
+                //取消复选框
+                onUnselect: function () {
+                    var rows = datagrid.datagrid('getSelections');
+                    if (editRow == undefined) {
+                        $('#btn-save').linkbutton('disable');
+                        if (rows.length == 1) {
+                            $('#btn-edit').linkbutton('enable');
+                        }
+                    }
+                    else {
+                        $('#btn-save').linkbutton('enable');
+                        $('#btn-edit').linkbutton('disable');
+                    }
+                    //alert(rows.length);
+                    if (rows.length == 1) {
+                        $('#btn-add').linkbutton('disable');
+                        $('#btn-remove').linkbutton('enable');
+                        //$('#btn-edit').linkbutton('enable');
+                        // $('#btn-save').linkbutton('enable');
+                        $('#btn-redo').linkbutton('enable');
+                    } else if (rows.length > 1) {
+                        $('#btn-add').linkbutton('disable');
+                        $('#btn-remove').linkbutton('enable');
+                        //$('#btn-edit').linkbutton('disable');
+                        //  $('#btn-save').linkbutton('enable');
+                        $('#btn-redo').linkbutton('enable');
+                    } else {
+                        // --没有一个条被选中时 就是取消
+                        editRow = undefined;
+                        datagrid.datagrid('rejectChanges');
+                        datagrid.datagrid("unselectAll");
+                    }
+                },
+                //选择所有
+                onSelectAll: function () {
+                    editRow = undefined;
+                    datagrid.datagrid('rejectChanges');
+                    $('#btn-add').linkbutton('disable');
+                    $('#btn-remove').linkbutton('enable');
+                    $('#btn-edit').linkbutton('disable');
+                    $('#btn-save').linkbutton('disable');
+                    $('#btn-redo').linkbutton('enable');
+                },
+                //取消所有
+                onUnselectAll: function () {
+                    $('#btn-add').linkbutton('enable');
+                    $('#btn-remove').linkbutton('disable');
+                    $('#btn-edit').linkbutton('disable');
+                    $('#btn-save').linkbutton('disable');
+                    $('#btn-redo').linkbutton('disable');
+                },
+            });
+        });
+    </script>
+</head>
+<body>
+    <table id="dd">
+    </table>
+</body>
+</html>

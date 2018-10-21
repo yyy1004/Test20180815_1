@@ -1,0 +1,23 @@
+﻿.status-wrap{
+    position:relative;
+    width:200px;
+    height:30px;
+/*border:1px solid red;*/
+}
+.status-tip{
+    float:left;
+    display:block;
+    width:120px;
+    height :30px;
+    line-height:30px;
+    /*border:1px solid green;*/
+}
+.status-color{
+    float:left;
+
+background-color:red;
+width:30px;
+height:30px;
+border-radius:50%;
+}
+

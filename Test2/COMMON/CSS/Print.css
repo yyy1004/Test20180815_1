@@ -1,0 +1,79 @@
+TABLE.input-9-tb
+{
+    BORDER-RIGHT: lightslategray thin;
+    BORDER-TOP: lightslategray thin;
+    BORDER-LEFT: lightslategray thin;
+    BORDER-BOTTOM: lightslategray thin;
+    FONT-FAMILY: Arial;
+    BACKGROUND-COLOR: #CADBFF
+}
+
+TABLE.input-9-tbnone
+{
+    BORDER-RIGHT: lightslategray thin;
+    BORDER-TOP: lightslategray thin;
+    BORDER-LEFT: lightslategray thin;
+    BORDER-BOTTOM: lightslategray thin;
+    FONT-FAMILY: Arial;
+    TEXT-ALIGN: center
+}
+TABLE.input-9-tb TH
+{
+    BORDER-RIGHT: none;
+    BORDER-TOP:  none;
+    FONT-SIZE: 16px;
+    BACKGROUND-IMAGE: none;
+    BORDER-LEFT:  none;
+    BORDER-BOTTOM: none;
+    BACKGROUND-REPEAT: repeat;
+    FONT-FAMILY: 宋体;
+    BACKGROUND-COLOR: #EEF2FF;
+    TEXT-ALIGN: center
+}
+TABLE.input-9-tb TR
+{
+    BORDER-RIGHT: none;
+    BORDER-TOP: none;
+    FONT-SIZE: 16px;
+    BACKGROUND-IMAGE: none;
+    BORDER-LEFT: none;
+    BORDER-BOTTOM: none;
+    BACKGROUND-REPEAT: repeat;
+    FONT-FAMILY: 宋体;
+    BACKGROUND-COLOR: #EEF2FF;
+    TEXT-ALIGN: left
+}
+
+TABLE.input-9-tb SELECT
+{
+	border-bottom:solid 10px #ff0000 ;
+	border-top:solid 10px #ff0000 ;
+	border-left:solid 10px #ff0000 ;
+	border-right:solid 10px #ff0000 ;    
+    FONT-SIZE: 16px;
+    FONT-FAMILY: 宋体;
+	background-color:#EEF2FF ;
+	float:none  ;
+	padding:0 0 0 0 ;
+	margin:0 0 0 0 ;
+}
+
+TABLE.input-9-tb TD.c_td
+{
+    FONT-SIZE: 16px;
+    FONT-FAMILY: 宋体;
+    TEXT-ALIGN: left
+}
+TABLE.input-9-tb TD.td_notnull
+{
+    TEXT-ALIGN: left
+}
+TABLE.input-9-tb TR.c_tr
+{
+    FONT-SIZE: 16px;
+    FONT-FAMILY: 宋体
+}
+TABLE.input-9-tb TD.td_null
+{
+    TEXT-ALIGN: left
+}

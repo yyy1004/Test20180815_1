@@ -1,0 +1,27 @@
+﻿* {
+    font-family: Arial;
+    margin: 0px;
+    padding: 0px;
+}
+
+a {
+    cursor: pointer;
+    text-decoration-line: none;
+    color: inherit;
+}
+
+.explorer{
+    position:relative;
+    color:#db251a;
+}
+
+a:hover{
+
+}
+
+#Image1 {
+    height: 60px;
+    /*width:328px;*/
+    margin-left: 14px;
+    margin-top: 14px;
+}
